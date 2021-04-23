@@ -6,6 +6,5 @@ int main(){
 
 	char c;
 	cin >> c;
-	cout << int(c);
-	
+	cout << int(c);	
 }
