@@ -12,4 +12,10 @@ int main(){
     positive += (d > 0);
     positive += (e > 0);
     std::cout << positive << endl;
+
+    //static array
+    int w[5];
+    w[0] = 0;
+    w[1] = 1;
+    w[2] = 2;
 }
