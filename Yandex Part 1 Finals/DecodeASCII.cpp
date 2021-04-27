@@ -1,13 +1,10 @@
 #include <iostream>
 #include <string>
-#include <string>
-#include <map>
 
 using namespace std;
 
 int main(){
-    string text, plainText;    
-    multimap<int, char> asciiMap;
+    string text, plainText;  
 
     cin >> text;
 
@@ -16,22 +13,16 @@ int main(){
         int chTwoDigits = ( 10 * (text[i] - '0' ) ) + text[++i] - '0';
         w = i;
         int chThreeDigits = ( 100 * (text[z] - '0' ) ) + ( 10 * (text[w] - '0' ) ) + text[++w] - '0';
-        // valid three digits
         if( chThreeDigits <= 127 && chThreeDigits > 99){
             plainText += char(chThreeDigits);
-            //asciiMap.insert(ch, char(ch));
+            i=w;
+            z=i;
             continue;
         }
-        else{            
-            // valid Two digits
+        else
             if( chTwoDigits <= 99 && chTwoDigits >= 0)
                 plainText += char(chTwoDigits);
-                //int temp = text[i] + text[++i];
-                //asciiMap.insert(ch, char(ch));
-        }
         z=i;
     }
-    
-    cout << plainText;
-    
+    cout << plainText;    
 }
