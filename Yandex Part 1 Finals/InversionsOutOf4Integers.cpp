@@ -18,20 +18,26 @@ int main(){
         input[count] = a;
         count++;       
     }while(count <= 3);
-
+    
     for (int i = 0; i < input.size(); i++)
     {
-        for (int j = i+1; j < input.size(); j++)
-        {
-            if(input[i] >=  input[j]){
-                int iTemp = input[i];
-                int jTemp = input[j];
-                input[j] = iTemp;
-                input[i] = jTemp;
-                swap++;
-            }
-        }        
+        for (int j = i + 1; input[i] >=  input[j]; j++)
+            swap++;      
     }
+
+    // for (int i = 0; i < input.size(); i++)
+    // {
+    //     for (int j = i+1; j < input.size(); j++)
+    //     {
+    //         if(input[i] >=  input[j]){
+    //             int iTemp = input[i];
+    //             int jTemp = input[j];
+    //             input[j] = iTemp;
+    //             input[i] = jTemp;
+    //             swap++;
+    //         }
+    //     }        
+    // }
 
     cout << swap;
 }
