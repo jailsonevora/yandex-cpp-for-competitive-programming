@@ -47,7 +47,7 @@ int main(){
             i=w;
             z=i;
             continue;
-        }
+        } 
         else
             if( chTwoDigits <= 99 && chTwoDigits >= 0)
                 plainText += char(chTwoDigits);
