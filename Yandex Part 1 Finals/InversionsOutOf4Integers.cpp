@@ -13,18 +13,23 @@ int main(){
     int a, b, c, d, count = 0, swap = 0;
     array<int, 4> input;
 
+    // without loop
     cin >> a >> b >> c >> d;
+    swap = (a > b) == true;
+    swap += (a > c) == true;
+    swap += (a > d) == true;
+    swap += (b > c) == true;
+    swap += (b > d) == true;
+    swap += (c > d) == true;
 
-    bool x = (a >= b) == true;
-    x += (a >= c) == true;
-    x += (a >= d) == true;
-
+    // with loop without swapping
     // for (int i = 0; i < input.size(); i++)
     // {
     //     for (int j = i + 1; input[i] >=  input[j]; j++)
     //         swap++;      
     // }
 
+    // with loop with swapping
     // for (int i = 0; i < input.size(); i++)
     // {
     //     for (int j = i+1; j < input.size(); j++)
