@@ -10,20 +10,20 @@ using namespace std;
 
 int main(){
 
-    int a, count = 0, swap = 0;
+    int a, b, c, d, count = 0, swap = 0;
     array<int, 4> input;
 
-    do{    
-        cin >> a;
-        input[count] = a;
-        count++;       
-    }while(count <= 3);
-    
-    for (int i = 0; i < input.size(); i++)
-    {
-        for (int j = i + 1; input[i] >=  input[j]; j++)
-            swap++;      
-    }
+    cin >> a >> b >> c >> d;
+
+    bool x = (a >= b) == true;
+    x += (a >= c) == true;
+    x += (a >= d) == true;
+
+    // for (int i = 0; i < input.size(); i++)
+    // {
+    //     for (int j = i + 1; input[i] >=  input[j]; j++)
+    //         swap++;      
+    // }
 
     // for (int i = 0; i < input.size(); i++)
     // {
