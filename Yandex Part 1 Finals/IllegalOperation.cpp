@@ -8,7 +8,9 @@ int main() {
  
     long double a1, b1, c1, a2, b2, c2;  
     cin >> a1 >> b1 >> c1;  
-    cin >> a2 >> b2 >> c2;  
+    10*2 - 10*1
+    8*1 - 8*2
+    10*8 - 10*8
     long double d = a1 * b2 - a2 * b1;  
     long double dx = c2 * b1 - c1 * b2;  
     long double dy = a2 * c1 - a1 * c2;  
