@@ -11,9 +11,8 @@ int main(){
     cin >> a;
 
     for(int total_digts = 0; total_digts < 7; c++){
-        a *=a;        
+        a +=a;        
         total_digts = (int)log10(a);
     }
-    cout << a << c;
-
+    cout << a << " " << c;
 }
