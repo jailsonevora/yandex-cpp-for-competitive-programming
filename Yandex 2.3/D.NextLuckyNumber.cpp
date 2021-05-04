@@ -26,7 +26,8 @@ int main(){
     cin >> a;
 
     a = abs(a); 
-    sum = sumDigits((a+1));   
+    a+=1;
+    sum = sumDigits(a);   
 
     for(; sum != 13; ){
         a+=1;
