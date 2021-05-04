@@ -25,10 +25,13 @@ int main(){
     int a, sum = 0;
     cin >> a;
 
-    a = abs(a);    
+    a = abs(a); 
+    sum = sumDigits((a+1));   
 
-    for(int aTemp = a; sumDigits(a) != 13 && aTemp >= a ; aTemp+=1)
-        sum = sumDigits(aTemp);
+    for(; sum != 13; ){
+        a+=1;
+        sum = sumDigits(a);
+    }
 
     cout << a;
 }
