@@ -21,7 +21,7 @@ int main(){
         c++;
     }while(totalDigits(a) < 8);
 
-    cout << a << "" << c;
+    cout << a << " " << c;
 }
 
 // #include <iostream>
