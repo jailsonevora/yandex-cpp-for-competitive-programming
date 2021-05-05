@@ -18,7 +18,7 @@ int main(){
 
     do{
         a+=a;
-        c+=c;
+        c++;
     }while(totalDigits(a) < 8);
 
     cout << a << c;
