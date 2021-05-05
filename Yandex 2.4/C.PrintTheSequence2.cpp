@@ -15,6 +15,5 @@ int main(){
         ar.push_back(a);
 
     for (int i = 1; i < ar.size(); i++)
-        cout << ar[i] << " ";
-     
+        cout << ar[i] << " ";     
 }
