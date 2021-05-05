@@ -17,11 +17,11 @@ int main(){
     cin >> a;
 
     do{
-        a+=a;
+        a++;
         c++;
     }while(totalDigits(a) < 8);
 
-    cout << a << c;
+    cout << a << "" << c;
 }
 
 // #include <iostream>
