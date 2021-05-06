@@ -5,17 +5,19 @@
 using namespace std;
 
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
+    //ios::sync_with_stdio(false);
+    //cin.tie(0);
     
-    int n;
-    int a[n];
+    int n = 0;
 
     cin >> n;
-    cin.ignore();
-    for (int i = 0; i < n; i++)
+
+    int a[n];
+
+    cin.clear();
+    for (int i = 0; i < n; ++i)
         cin >> a[i];
 
-    for(int i = n-1; i > 0 ; --i)
+    for(int i = n-1; i >= 0 ; --i)
         cout << a[i] << " ";
 }
