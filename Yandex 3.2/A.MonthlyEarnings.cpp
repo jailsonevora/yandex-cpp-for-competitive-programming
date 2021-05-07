@@ -7,18 +7,20 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int n, m;
+    int n = 0, m = 0;
     cin >> n >> m;
 
     int a[n][m];
     cin.clear();
 
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < m; ++j)
             cin >> a[i][j];
 
-    for (int i = 0, sum = 0; i < n; i++){
-        for (int j = 0; j < m; j++, sum +=a[i][j]);
-        cout << sum;
+    for (int j = 0; j < m; ++j){
+        long long sum = 0;
+        for (int i = 0; i < n; ++i) 
+            sum +=a[i][j];
+        cout << sum << " ";
     }
 }
