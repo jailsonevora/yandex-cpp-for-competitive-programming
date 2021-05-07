@@ -41,7 +41,7 @@ int main(){
             a[i] = M;
         else if(b[i] == M)
             a[i] = m;
-        else if(a[i] < M && a[i] > m)
+        else
             a[i] = b[i];
     }
 
