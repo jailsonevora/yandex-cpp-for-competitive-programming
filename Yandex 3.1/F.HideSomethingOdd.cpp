@@ -2,7 +2,6 @@
 #include <cmath>
 #include <iomanip> 
 #include <vector>
-//#include <bits/stdc++.h>
 
 using namespace std;
 
