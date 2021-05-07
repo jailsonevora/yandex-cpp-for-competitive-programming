@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <iomanip> 
+#include <vector>
+//#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -14,16 +16,15 @@ int main(){
     int a[n];
     cin.clear();
 
-    int aTempOdd[n], aTempEven[n];
+    vector<int> aTempOdd, aTempEven;
     for (int i = 0; i < n; i++)
         cin >> a[i];
 
-    int countEvenEnd = 0;
-    for (int i = 0; i < n; i++, countEvenEnd++)
-        (a[i] % 2 == 0) ? aTempEven[i] = a[i] : aTempOdd[i] = a[i];
+    for (int i = 0; i < n; i++)
+        (a[i] % 2 == 0) ? aTempEven.push_back(a[i]) : aTempOdd.push_back(a[i]);
     
-    for (int i = 0, j = countEvenEnd; i < n; i++, ++j)
-        aTempEven[j] = aTempOdd[i];
+    for (auto i = aTempOdd.begin(); i != aTempOdd.end(); i++)
+        aTempEven.push_back(*i);
 
     for (int i = 0; i < n; i++)
         cout << aTempEven[i] << " ";
