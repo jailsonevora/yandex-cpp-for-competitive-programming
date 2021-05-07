@@ -19,12 +19,12 @@ int main(){
     cin.clear();
     cin >> qn;
 
-    // cin.clear();
-    // while (cin >> q1)    
-    //     cout << a[q1-1] << " ";
-
-    for (int i = 0; i < qn; ++i){
-        cin >> q1;     
+    cin.clear();
+    while (cin >> q1)    
         cout << a[q1-1] << " ";
-    }
+
+    // for (int i = 0; i < qn; ++i){
+    //     cin >> q1;     
+    //     cout << a[q1-1] << " ";
+    // }
 }
