@@ -7,15 +7,15 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int n = 8, m = 8;
-    int a[n][m];
+    int n = 4, m = 4;
+    char a[n][m];
 
     for (int i = 0; i < n; ++i)
         for (int j = 0; j < m; ++j)
             cin >> a[i][j];
 
-    for (int i = n; i < 0; i++){
-        for (int j = m; j < 0; j++){
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < m; j++){
             if(a[i][j] == 'k'){
                 // move up
                 if(a[i-2][j-1] == '.') a[i-2][j-1] = '!';
@@ -36,7 +36,7 @@ int main(){
         }  
     }
 
-    for (int i = n; i < 0; i++)
-        for (int j = m; j < 0; j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
             cout << a[i][j] << " ";
 }
