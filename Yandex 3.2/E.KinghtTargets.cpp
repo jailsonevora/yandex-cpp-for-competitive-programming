@@ -8,6 +8,7 @@ int main(){
     cin.tie(0);
 
     int n = 8, m = 8;
+    int a[n][m];
 
     for (int i = 0; i < n; ++i)
         for (int j = 0; j < m; ++j)
