@@ -3,8 +3,8 @@
 
 using namespace std;
 
-#define n 6
-#define m 6
+#define n 8
+#define m 8
 bool isSafe(int x, int y, char a[n][m]);
 
 bool isSafe(int x, int y, char a[n][m])
@@ -22,13 +22,15 @@ int main(){
         for (int j = 0; j < m; ++j)
             cin >> a[i][j];
 
-    int ki = -1, kj = -1;
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
-            if(a[i][j] == 'k'){                
+    int ki = 9, kj = 9;
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < m; j++){
+            if(a[i][j] == 'K'){                
                 ki = i;
                 kj = j;               
             }
+        }
+    }
 
     // move up to the left
     if(isSafe(ki-2, kj-1, a)){
