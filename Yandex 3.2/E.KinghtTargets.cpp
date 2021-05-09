@@ -9,7 +9,7 @@ bool isSafe(int x, int y, char a[n][m]);
 
 bool isSafe(int x, int y, char a[n][m])
 {
-    return (x >= 0 && x < n && y >= 0 && y < m && a[x][y] == '.');
+    return (x >= 0 && x < n && y >= 0 && y < m && int(a[x][y]) == 46/*'.'*/);
 }
 
 int main(){
