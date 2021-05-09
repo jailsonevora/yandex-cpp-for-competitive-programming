@@ -3,8 +3,8 @@
 
 using namespace std;
 
-#define n 8
-#define m 8
+#define n 6
+#define m 6
 
 bool isSafe(int x, int y, char a[n][m]);
 
@@ -27,16 +27,44 @@ int main(){
     for (int i = 0; i < n; i++){
         for (int j = 0; j < m; j++){
             if(a[i][j] == 'k'){                
-                // move up
-                if(isSafe(i-2, j-1, a)){
-                    int iTemp = i;
-                    int jTemp = j;
-                    iTemp -=2; jTemp -=1; 
-                    a[iTemp][jTemp] = '!';a[iTemp][jTemp] = '!';
-                }
+                // move up to the left
+                if(isSafe(i-2, j-1, a))
+                    a[i-2][j-1] = '!'; a[i-2][j-1] = '!';
+                // move up to the right
+                if(isSafe(i-2, j+1, a))
+                    a[i-2][j+1] = '!'; a[i-2][j+1] = '!';
+
+                // move down to the left
+                if(isSafe(i+2, j-1, a))
+                    a[i+2][j-1] = '!'; a[i+2][j-1] = '!';
+                // move down to the right
+                if(isSafe(i+2, j+1, a))
+                    a[i+2][j+1] = '!'; a[i+2][j+1] = '!';                
             }
         }  
     }
+
+    for (int j = 0; j < m; j++){
+        for (int i = 0; i < n; i++){
+            if(a[i][j] == 'k'){                
+                // move horizontal to the left up 
+                if(isSafe(i-1, j-2, a))
+                    a[i-1][j-2] = '!'; a[i-1][j-2] = '!';
+                // move horizontal to the left down
+                if(isSafe(i+1, j-2, a))
+                    a[i+1][j-2] = '!'; a[i+1][j-2] = '!';
+
+                // move horizontal to the right up 
+                if(isSafe(i-1, j+2, a))
+                    a[i-1][j+2] = '!'; a[i-1][j+2] = '!';
+                // move horizontal to the right down
+                if(isSafe(i+1, j+2, a))
+                    a[i+1][j+2] = '!'; a[i+1][j+2] = '!';                 
+            }
+        }  
+    }
+
+    
 
     for (int i = 0; i < n; i++){
         for (int j = 0; j < m; j++)
