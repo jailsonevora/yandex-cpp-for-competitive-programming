@@ -24,47 +24,43 @@ int main(){
         for (int j = 0; j < m; ++j)
             cin >> a[i][j];
 
+    int ki = -1, kj = -1;
     for (int i = 0; i < n; i++){
         for (int j = 0; j < m; j++){
             if(a[i][j] == 'k'){                
-                // move up to the left
-                if(isSafe(i-2, j-1, a))
-                    a[i-2][j-1] = '!'; a[i-2][j-1] = '!';
-                // move up to the right
-                if(isSafe(i-2, j+1, a))
-                    a[i-2][j+1] = '!'; a[i-2][j+1] = '!';
-
-                // move down to the left
-                if(isSafe(i+2, j-1, a))
-                    a[i+2][j-1] = '!'; a[i+2][j-1] = '!';
-                // move down to the right
-                if(isSafe(i+2, j+1, a))
-                    a[i+2][j+1] = '!'; a[i+2][j+1] = '!';                
+                ki = i;
+                kj = j;               
             }
         }  
     }
 
-    for (int j = 0; j < m; j++){
-        for (int i = 0; i < n; i++){
-            if(a[i][j] == 'k'){                
-                // move horizontal to the left up 
-                if(isSafe(i-1, j-2, a))
-                    a[i-1][j-2] = '!'; a[i-1][j-2] = '!';
-                // move horizontal to the left down
-                if(isSafe(i+1, j-2, a))
-                    a[i+1][j-2] = '!'; a[i+1][j-2] = '!';
+    // move up to the left
+    if(isSafe(ki-2, kj-1, a))
+        a[ki-2][kj-1] = '!'; a[ki-2][kj-1] = '!';
+    // move up to the right
+    if(isSafe(ki-2, kj+1, a))
+        a[ki-2][kj+1] = '!'; a[ki-2][kj+1] = '!';
 
-                // move horizontal to the right up 
-                if(isSafe(i-1, j+2, a))
-                    a[i-1][j+2] = '!'; a[i-1][j+2] = '!';
-                // move horizontal to the right down
-                if(isSafe(i+1, j+2, a))
-                    a[i+1][j+2] = '!'; a[i+1][j+2] = '!';                 
-            }
-        }  
-    }
+    // move down to the left
+    if(isSafe(ki+2, kj-1, a))
+        a[ki+2][kj-1] = '!'; a[ki+2][kj-1] = '!';
+    // move down to the right
+    if(isSafe(ki+2, kj+1, a))
+        a[ki+2][kj+1] = '!'; a[ki+2][kj+1] = '!'; 
 
-    
+    // move horizontal to the left up 
+    if(isSafe(ki-1, kj-2, a))
+        a[ki-1][kj-2] = '!'; a[ki-1][kj-2] = '!';
+    // move horizontal to the left down
+    if(isSafe(ki+1, kj-2, a))
+        a[ki+1][kj-2] = '!'; a[ki+1][kj-2] = '!';
+
+    // move horizontal to the right up 
+    if(isSafe(ki-1, kj+2, a))
+        a[ki-1][kj+2] = '!'; a[ki-1][kj+2] = '!';
+    // move horizontal to the right down
+    if(isSafe(ki+1, kj+2, a))
+        a[ki+1][kj+2] = '!'; a[ki+1][kj+2] = '!';    
 
     for (int i = 0; i < n; i++){
         for (int j = 0; j < m; j++)
@@ -72,23 +68,3 @@ int main(){
         cout<<endl;
     }
 }
-
-
-                // // move up
-                // int iTemp = i;
-                // int jTemp = j;
-                // if(a[iTemp-2][jTemp-1] == '.' && (iTemp-2) >= 0 && (jTemp-1) >= 0 && (iTemp-2) < n && (jTemp-1) < m) a[iTemp-2][jTemp-1] = '!';
-                // if(a[iTemp-2][jTemp+1] == '.' && (iTemp-2) >= 0 && (jTemp+1) >= 0 && (iTemp-2) < n && (jTemp+1) < m) a[iTemp-2][jTemp+1] = '!';
-
-                // // move down
-                // if(a[iTemp+2][jTemp-1] == '.' && (iTemp+2) >= 0 && (jTemp-1) >= 0 && (iTemp+2) < n && (jTemp-1) < m) a[iTemp+2][jTemp-1] = '!';
-                // if(a[iTemp+2][jTemp+1] == '.' && (iTemp+2) >= 0 && (jTemp+1) >= 0 && (iTemp+2) < n && (jTemp+1) < m) a[iTemp+2][jTemp+1] = '!';
-
-                // // move horizontal left
-                // if(a[iTemp-1][jTemp-2] == '.' && (iTemp-1) >= 0 && (jTemp-2) >= 0 && (iTemp-1) < n && (jTemp-2) < m) a[iTemp-1][jTemp-2] = '!';
-                // if(a[iTemp+1][jTemp-2] == '.' && (iTemp+1) >= 0 && (jTemp-2) >= 0 && (iTemp+1) < n && (jTemp-2) < m) a[iTemp+1][jTemp-2] = '!';
-
-                // // move horizontal right
-                // if(a[iTemp-1][jTemp+2] == '.' && (iTemp-1) >= 0 && (jTemp+2) >= 0 && (iTemp-1) < n && (jTemp+2) < m) a[iTemp-1][jTemp+2] = '!';
-                // if(a[iTemp+1][jTemp+2] == '.' && (iTemp+1) >= 0 && (jTemp+2) >= 0 && (iTemp+1) < n && (jTemp+2) < m) a[iTemp+1][jTemp+2] = '!';
-            
