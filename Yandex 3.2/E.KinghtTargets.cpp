@@ -3,6 +3,12 @@
 
 using namespace std;
 
+int isSafe(int x, int y, int sol[N][N])
+{
+    return (x >= 0 && x < N && y >= 0 && y < N
+            && sol[x][y] == -1);
+}
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -18,20 +24,22 @@ int main(){
         for (int j = 0; j < m; j++){
             if(a[i][j] == 'k'){
                 // move up
-                if(a[i-2][j-1] == '.' && (i-2) > -1 && (j-1) > -1 && (i-2) < n && (j-1) < m) a[i-2][j-1] = '!';
-                if(a[i-2][j+1] == '.' && (i-2) > -1 && (j+1) > -1 && (i-2) < n && (j+1) < m) a[i-2][j+1] = '!';
+                int iTemp = i;
+                int jTemp = j;
+                if(a[iTemp-2][jTemp-1] == '.' && (iTemp-2) >= 0 && (jTemp-1) >= 0 && (iTemp-2) < n && (jTemp-1) < m) a[iTemp-2][jTemp-1] = '!';
+                if(a[iTemp-2][jTemp+1] == '.' && (iTemp-2) >= 0 && (jTemp+1) >= 0 && (iTemp-2) < n && (jTemp+1) < m) a[iTemp-2][jTemp+1] = '!';
 
                 // move down
-                if(a[i+2][j-1] == '.' && (i+2) > -1 && (j-1) > -1 && (i+2) < n && (j-1) < m) a[i+2][j-1] = '!';
-                if(a[i+2][j+1] == '.' && (i+2) > -1 && (j+1) > -1 && (i+2) < n && (j+1) < m) a[i+2][j+1] = '!';
+                if(a[iTemp+2][jTemp-1] == '.' && (iTemp+2) >= 0 && (jTemp-1) >= 0 && (iTemp+2) < n && (jTemp-1) < m) a[iTemp+2][jTemp-1] = '!';
+                if(a[iTemp+2][jTemp+1] == '.' && (iTemp+2) >= 0 && (jTemp+1) >= 0 && (iTemp+2) < n && (jTemp+1) < m) a[iTemp+2][jTemp+1] = '!';
 
                 // move horizontal left
-                if(a[i-1][j-2] == '.' && (i-1) > -1 && (j-2) > -1 && (i-1) < n && (j-2) < m) a[i-1][j-2] = '!';
-                if(a[i+1][j-2] == '.' && (i+1) > -1 && (j-2) > -1 && (i+1) < n && (j-2) < m) a[i+1][j-2] = '!';
+                if(a[iTemp-1][jTemp-2] == '.' && (iTemp-1) >= 0 && (jTemp-2) >= 0 && (iTemp-1) < n && (jTemp-2) < m) a[iTemp-1][jTemp-2] = '!';
+                if(a[iTemp+1][jTemp-2] == '.' && (iTemp+1) >= 0 && (jTemp-2) >= 0 && (iTemp+1) < n && (jTemp-2) < m) a[iTemp+1][jTemp-2] = '!';
 
                 // move horizontal right
-                if(a[i-1][j+2] == '.' && (i-1) > -1 && (j+2) > -1 && (i-1) < n && (j+2) < m) a[i-1][j+2] = '!';
-                if(a[i+1][j+2] == '.' && (i+1) > -1 && (j+2) > -1 && (i+1) < n && (j+2) < m) a[i+1][j+2] = '!';
+                if(a[iTemp-1][jTemp+2] == '.' && (iTemp-1) >= 0 && (jTemp+2) >= 0 && (iTemp-1) < n && (jTemp+2) < m) a[iTemp-1][jTemp+2] = '!';
+                if(a[iTemp+1][jTemp+2] == '.' && (iTemp+1) >= 0 && (jTemp+2) >= 0 && (iTemp+1) < n && (jTemp+2) < m) a[iTemp+1][jTemp+2] = '!';
             }
         }  
     }
