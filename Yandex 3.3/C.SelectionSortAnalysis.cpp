@@ -28,10 +28,9 @@ int main(){
         for(int j = i+1; j < n; ++j)
             if(a[j] < a[midI])
                 midI = j;
-        numOfSwap = swap(&a[midI], &a[i]);
+        numOfSwap += swap(&a[midI], &a[i]);
     }
     
-    for (int i = 0; i < n; ++i)
-        cout << numOfSwap << " ";
+    cout << numOfSwap;
 }   
 
