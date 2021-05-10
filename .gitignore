@@ -348,5 +348,4 @@ healthchecksdb
 MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
-.ionide/
-Yandex 3.4/D.Createmy_sort.exe
+.ionide/*/*.exe
