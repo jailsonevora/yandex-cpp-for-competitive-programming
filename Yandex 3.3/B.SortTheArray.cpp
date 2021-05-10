@@ -7,7 +7,7 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int n = 5;
+    int n = 3;
 
     int a[n];
     cin.clear();
