@@ -16,16 +16,21 @@ int main(){
             cin >> a[i];
 
     int aTemp[n];
-    int t = 3; 
+    int t = 6; 
     for(int i = 0; i < n; ++i){
-        if(t >= a[i]){
+        if(i == n - 1)
             aTemp[i] = t;
-            t = a[i];
+        else{
+            if(t <= a[i]){
+                aTemp[i] = t;
+                t = a[i];
+            }    
+            else if(t > a[i])
+                aTemp[i] = a[i];
         }    
-        else
-            aTemp[i] = a[i];
     }
 
     for (int i = 0; i < n; ++i)
         cout << aTemp[i] << " ";
 }
+
