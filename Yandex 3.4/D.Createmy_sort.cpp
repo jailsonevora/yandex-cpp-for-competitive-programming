@@ -3,21 +3,16 @@
 
 using namespace std;
 
-int swap(int *i, int *j){
-    int temp = *j;
-    *j = *i;
-    *i = temp;
-    return 1;
-}
-
 void my_sort (int n, int a[]){
 
     for(int i = 0; i < n; ++i){
         int midI = i;
         for(int j = i+1; j < n; ++j)
-            if(a[j] < a[midI])
+            if(a[j] > a[midI])
                 midI = j;
-        swap(&a[midI], &a[i]);
+        int temp = a[i];
+        a[i] = a[midI];
+        a[midI] = temp;
     }           
 }
 
