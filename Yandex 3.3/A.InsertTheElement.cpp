@@ -18,7 +18,7 @@ int main(){
     int aTemp[n];
     int t = 6; 
     for(int i = 0; i < n; ++i){
-        if(i == n - 1)
+        if(i == (n-1))
             aTemp[i] = t;
         else{
             if(t <= a[i]){
@@ -30,7 +30,10 @@ int main(){
         }    
     }
 
+    for(int i = 0; i < n; ++i)
+	    a[i] = aTemp[i];
+
     for (int i = 0; i < n; ++i)
-        cout << aTemp[i] << " ";
+        cout << a[i] << " ";
 }
 
