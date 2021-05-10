@@ -17,23 +17,12 @@ int main(){
 
     int aTemp[n];
     int t = 6; 
-    for(int i = 0; i < n; ++i){
-        if(i == (n-1))
-            aTemp[i] = t;
-        else{
-            if(t <= a[i]){
-                aTemp[i] = t;
-                t = a[i];
-            }    
-            else if(t > a[i])
-                aTemp[i] = a[i];
-        }    
-    }
-
     for(int i = 0; i < n; ++i)
-	    a[i] = aTemp[i];
-
-    for (int i = 0; i < n; ++i)
-        cout << a[i] << " ";
+        for(int j = 0; j < n; ++j)
+            if(a[i] < a[j]){ 
+                int temp = a[j];
+                a[j] = a[i];
+                a[i] = temp;                
+            }
 }
 
