@@ -2,11 +2,6 @@
 #include <cmath>
 
 using namespace std;
-
-int fp(int n);
-void f(int n);
-
-
 void f(int n){
     if(n <= 0)
         return;
