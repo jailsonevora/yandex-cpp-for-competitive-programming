@@ -22,8 +22,8 @@ void f(int n, int a[]){
     cout << a[mid] << " ";
     if(mid == 0)
         return;    
-    if (mid < n) f(mid + n, a);
-    if (mid == n) f(mid - 1, a);
+    if (mid < (sizeof(a)-1)) f(mid + (sizeof(a)-1), a);
+    //if (mid == n) f(n, mid - 1, a);
         
 }
 
