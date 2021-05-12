@@ -28,9 +28,9 @@ void movingOnHorizontal(int ki, char a[n][m])
 
 void movingOnDiagonal(int ki, int kj, char a[n][m])
 {
-    for (int i = 0, j = 0; i < n && j < n; i++, ++j)
+    for (int i = ki, j = kj; i < n && j < n; i++, ++j)
             if(isSafe(i, j, a)) a[i][j] = '!';
-    for (int i = 0, j = n-1; i < n && j >= 0; ++i, --j)
+    for (int i = ki, j = (kj+(n-kj)); i < n && j >= 0; ++i, --j)
             if(isSafe(i, j, a)) a[i][j] = '!';
 }
 
@@ -38,7 +38,7 @@ void printingMatrix(char a[n][m])
 {
     for (int i = 0; i < n; i++){
         for (int j = 0; j < m; j++)
-            cout << a[i][j] << "";
+            cout << a[i][j] << " ";
         cout<<endl;
     }
 }
@@ -69,7 +69,7 @@ int main(){
     // move horizontal
     movingOnHorizontal(ki,a);   
     // move diagonals
-    movingOnDiagonal(ki, kj, a);  
+    //movingOnDiagonal(ki, kj, a);  
 
     printingMatrix(a);
     
