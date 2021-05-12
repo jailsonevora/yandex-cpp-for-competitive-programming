@@ -5,7 +5,7 @@ using namespace std;
 
 int hills(int n, int a[]){
     int count = 0;
-    for(int i = 1; i < n - 2; ++i)  
+    for(int i = 1; i <= n - 2; ++i)  
         if(a[i] > a[i-1] && a[i] > a[i+1])
             count++;
     return count;
