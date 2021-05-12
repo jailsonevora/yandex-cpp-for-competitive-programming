@@ -26,5 +26,6 @@ int main(){
     cin.tie(0);
     
     //f(2,5)
-    cout << f(2,5);      
+    cout << f(2,5);     
+    //answ: 3 and 5 
 }   

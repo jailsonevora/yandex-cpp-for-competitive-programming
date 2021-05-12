@@ -18,5 +18,7 @@ int main(){
     cout << "b: " << sizeof(b) << " ";
     cout << "ch: " << sizeof(ch)<< " ";
     cout << "q: " << sizeof(q) << " ";
-    cout << "txt: " << sizeof(txt) << " ";    
+    cout << "txt: " << sizeof(txt) << " ";   
+
+    //2056 
 }   

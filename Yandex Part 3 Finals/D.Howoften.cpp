@@ -13,4 +13,5 @@ void f(int n) {
 int main() {  
     f(3);  
     return 0;  
+    // answ: 9
 }
