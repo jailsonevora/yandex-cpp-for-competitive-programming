@@ -18,12 +18,16 @@ using namespace std;
 
 void f(int n, int a[]){
     int mid = (n - 1) / 2;
+    int left = 0;
+    //int right = n;
 
+    if(mid > left)
+        left = mid;
+
+    if(n == 0)
+        return;  
     cout << a[mid] << " ";
-    if(mid == 0)
-        return;    
-    if (mid < (sizeof(a)-1)) f(mid + (sizeof(a)-1), a);
-    //if (mid == n) f(n, mid - 1, a);
+    f((n -1), a);
         
 }
 
@@ -43,4 +47,5 @@ int main(){
     //cout << f(a, 0, n-1);     
     //cout << a[f(a, i)];
     f(n, a);
+    
 }
