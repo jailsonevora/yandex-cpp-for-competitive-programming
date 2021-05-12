@@ -9,15 +9,13 @@ int f(int n, int x){
     x++;
     return f(n - 1, x) + f(n - 2, x); 
 }
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    // int n = 0;
-    // cin >> n;
+    int n = 0;
+    cin >> n;
 
-    //f(2,5);
-    cout << f(2,5);
-
-    //cout << f(n, 0);    
+    cout << f(n, 0);    
 }   
