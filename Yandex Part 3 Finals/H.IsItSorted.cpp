@@ -3,11 +3,10 @@
 
 using namespace std;
 
-int swap(int *i, int *j){
+void swap(int *i, int *j){
     int temp = *j;
     *j = *i;
     *i = temp;
-    return 1;
 }
 
 void selectionSort(int *a, int n){
@@ -18,6 +17,12 @@ void selectionSort(int *a, int n){
                 midI = j;
             swap(&a[midI], &a[i]);
     }
+}
+
+bool checkSorted(int a[], int n){
+    for(int i = 0; i < n  && (a[i] > a[i+1]); ++i)
+        return true; 
+    return false;   
 }
 
 int main(){
@@ -35,12 +40,18 @@ int main(){
 
     cin.clear();
 
-    int a = 0, b = 0;
-    cin >> a >> b;
-
-    selectionSort(ar,n);
-    
-    
-    cout << numOfSwap;
-}   
-
+    int a = 0, b = 0, i = 1;
+    while (i <= q) {
+        cin >> a >> b;
+        //swap(ar[a-1],ar[b-1]);
+        int temp = ar[b-1];
+        ar[b-1] = ar[a-1];
+        ar[a-1] = temp;
+        if(checkSorted(ar, n)){
+            cout << "Sorted!\n" ;
+        }
+        else
+            cout << "Unsorted!\n";
+        i++;
+    }   
+}
