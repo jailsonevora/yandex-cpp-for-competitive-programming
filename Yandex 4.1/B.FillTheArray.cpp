@@ -11,9 +11,8 @@ int main(){
     int a[n] = {2,4,6,8,9};
     int *ptr = &a[k];
 
-    int i = n-1;
-    int *ptrEnd = ptr + n;
-    for (int *ptrBegin = ptr - k; ptrBegin != ptrEnd ; ptrBegin++, i--)
+    int *ptrBegin = (ptr - k), *ptrEnd = (ptr + n);
+    for (int i = n; ptrBegin != ptrEnd ; ++ptrBegin, --i)
         *ptrBegin = i;
 
     for (int i = 0; i < n; i++)
