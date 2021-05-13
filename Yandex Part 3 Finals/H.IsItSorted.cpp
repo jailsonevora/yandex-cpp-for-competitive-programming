@@ -9,16 +9,6 @@ void swap(int *i, int *j){
     *i = temp;
 }
 
-void selectionSort(int *a, int n){
-    for(int i = 0; i < n; ++i){
-        int midI = i;
-        for(int j = i+1; j < n; ++j)
-            if(a[j] < a[midI])
-                midI = j;
-            swap(&a[midI], &a[i]);
-    }
-}
-
 bool checkSorted(int a[], int n){
     if (n == 0 || n == 1)
         return true;
@@ -48,7 +38,7 @@ int main(){
     while (i <= q) {
         cin >> a >> b;
         swap(ar[a-1],ar[b-1]);
-        (checkSorted(ar, n)) ? cout << "Sorted!\n" ; : cout << "Unsorted!\n";  
+        (checkSorted(ar, n)) ? cout << "Sorted!\n" : cout << "Unsorted!\n";  
         i++;
     }   
 }
