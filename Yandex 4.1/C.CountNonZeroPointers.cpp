@@ -10,12 +10,9 @@ int main(){
     int n = 5, ans = 0;
     int *a1 = NULL, *a2 = &n, *a3 = &n;
 
-    if(a1 != NULL)
-        ans++;
-    if(a2 != NULL)
-        ans++;
-    if(a3 != NULL)
-        ans++;    
+    if(a1 != NULL) ans++;
+    if(a2 != NULL) ans++;
+    if(a3 != NULL) ans++;    
 
     cout << ans;
 }   
