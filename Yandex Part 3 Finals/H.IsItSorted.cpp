@@ -1,22 +1,22 @@
 #include <iostream>
 #include <cmath>
+#include <algorithm>
+#include <array>
 
 using namespace std;
 
-void swap(int *i, int *j){
-    int temp = *j;
-    *j = *i;
-    *i = temp;
+void swap(int ar[], int i, int j){
+    int temp = ar[j];
+    ar[j] = ar[i];
+    ar[i] = temp;
 }
 
-bool checkSorted(int a[], int n){
-    if (n == 0 || n == 1)
+bool is_sorted(int a[], int n){
+    if (n == 1 || n == 0)
         return true;
- 
-    for (int i = 1; i < n; i++)
-        if (a[i - 1] > a[i])
-            return false;
-    return true; 
+    if (a[n - 1] < a[n - 2])
+        return false;
+    return is_sorted(a, n - 1);
 }
 
 int main(){
@@ -35,10 +35,18 @@ int main(){
     cin.clear();
 
     int a = 0, b = 0, i = 1;
+
+    //With C++ STL
+    // while (cin >> a >> b) {
+    //     std::swap(ar[a-1],ar[b-1]);
+    //     (std::is_sorted(ar,ar+n)) ? cout << "Sorted!\n" : cout << "Unsorted!\n";
+    // }
+
+    //Made from scratch   
     while (i <= q) {
         cin >> a >> b;
-        swap(ar[a-1],ar[b-1]);
-        (checkSorted(ar, n)) ? cout << "Sorted!\n" : cout << "Unsorted!\n";  
+        swap(ar, a-1,b-1);
+        (is_sorted(ar,n)) ? cout << "Sorted!\n" : cout << "Unsorted!\n";  
         i++;
-    }   
+    } 
 }
