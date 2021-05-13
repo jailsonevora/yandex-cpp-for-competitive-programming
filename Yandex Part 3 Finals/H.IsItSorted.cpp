@@ -20,9 +20,13 @@ void selectionSort(int *a, int n){
 }
 
 bool checkSorted(int a[], int n){
-    for(int i = 0; i < n  && (a[i] > a[i+1]); ++i)
-        return true; 
-    return false;   
+    if (n == 0 || n == 1)
+        return true;
+ 
+    for (int i = 1; i < n; i++)
+        if (a[i - 1] > a[i])
+            return false;
+    return true; 
 }
 
 int main(){
@@ -43,15 +47,8 @@ int main(){
     int a = 0, b = 0, i = 1;
     while (i <= q) {
         cin >> a >> b;
-        //swap(ar[a-1],ar[b-1]);
-        int temp = ar[b-1];
-        ar[b-1] = ar[a-1];
-        ar[a-1] = temp;
-        if(checkSorted(ar, n)){
-            cout << "Sorted!\n" ;
-        }
-        else
-            cout << "Unsorted!\n";
+        swap(ar[a-1],ar[b-1]);
+        (checkSorted(ar, n)) ? cout << "Sorted!\n" ; : cout << "Unsorted!\n";  
         i++;
     }   
 }
