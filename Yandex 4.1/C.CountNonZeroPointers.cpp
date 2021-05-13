@@ -12,7 +12,6 @@ int main(){
 
     if(a1 != NULL) ans++;
     if(a2 != NULL) ans++;
-    if(a3 != NULL) ans++;    
-
+    if(a3 != NULL) ans++;   
     cout << ans;
 }   
