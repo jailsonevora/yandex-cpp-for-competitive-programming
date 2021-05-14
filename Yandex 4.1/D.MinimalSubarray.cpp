@@ -7,17 +7,21 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int subA[] = {1,2,3};
-    int n = 5;
+    int n = 4;
+    int subA[n] = {5,40,7};
     int *ptr = &subA[2], *ptr2 = &subA[1], *ptr3 = &subA[0];
-    int *a[n] = {ptr, ptr2, ptr3};
+    //int *a[n] = {&subA[2], &subA[1], &subA[0], &subA[2], &subA[0]};
+    int *a[n] = {ptr2, ptr, ptr3, ptr};
 
 
-    int *ptrBegin = a[0]; 
-    int *ptrEnd = a[n];
-    int answer = 0;
-    for (; ptrBegin != ptrEnd ; ++ptrBegin, ++answer);
 
-    for (int i = 0; i < n; i++)
-        cout << answer << "\n";
+    int ans = 0;
+    for (int *ptrBegin = a[0], *ptrEnd = a[n-1]; ptrBegin != ptrEnd; ++ptrBegin){
+        for (int *ptrJ = ptrBegin+1; ptrJ != ptrBegin; ++ptrJ){
+            if(*ptrBegin != *ptrJ)
+                ++ans;
+        }
+    }
+    
+    cout << ans << "\n";
 }   
