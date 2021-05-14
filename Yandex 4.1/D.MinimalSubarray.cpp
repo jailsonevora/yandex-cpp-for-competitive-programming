@@ -13,15 +13,15 @@ int main(){
     //int *a[n] = {&subA[2], &subA[1], &subA[0], &subA[2], &subA[0]};
     int *a[n] = {ptr2, ptr, ptr3, ptr};
 
-
-
     int ans = 0;
-    for (int *ptrBegin = a[0], *ptrEnd = a[n-1]; ptrBegin != ptrEnd; ++ptrBegin){
-        for (int *ptrJ = ptrBegin+1; ptrJ != ptrBegin; ++ptrJ){
-            if(*ptrBegin != *ptrJ)
+    for (int i = 0; i < n; ++i){
+        for (int j = i+1;  j < n; j++){
+            if(*a[i] != *a[j])
                 ++ans;
         }
-    }
+    }    
+    ans=(n-ans);
     
+
     cout << ans << "\n";
 }   
