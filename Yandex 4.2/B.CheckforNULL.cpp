@@ -16,10 +16,7 @@ int main(){
 
     int *a = &n;
     cout << "a before: " << *a << "\n";    
-    
-    //call by reference
-    //check(a);
-    //call by reference with pointer
 
+    //call by reference with pointer
     cout << "a after: " << check(a) << "\n";
 }   
