@@ -3,9 +3,9 @@
 
 using namespace std;
 
-void check(int &a, int &b, int &c){
-    int artBA = (b - a);
-    int artCB = (c - b);
+void f(int &a, int &b, int &c){
+
+    int artBA = (b - a), artCB = (c - b);
 
     if(artBA != artCB)
         c += (artBA - artCB);
@@ -17,6 +17,6 @@ int main(){
 
     int a = 1, b = 4, c = 8;   
 
-    check(a, b, c);
-    cout << "a: "<< a << " b: " << b << "c: " << c <<"\n";
+    f(a, b, c);
+    cout << "a: "<< a << " b: " << b << " c: " << c <<"\n";
 }   
