@@ -3,8 +3,14 @@
 
 using namespace std;
 
+//by reference
 void f(int &a){
     a=((a)*2);
+}
+
+//by reference with pointer
+void f(int *a){
+    *a=((*a)*2);
 }
 
 int main(){
@@ -14,6 +20,10 @@ int main(){
     int a = 4;
     cout << "a before: " << a << "\n";    
     
+    //call by reference
     f(a);
+    //call by reference with pointer
+    //f(&a);
+
     cout << "a after: " << a << "\n";
 }   
