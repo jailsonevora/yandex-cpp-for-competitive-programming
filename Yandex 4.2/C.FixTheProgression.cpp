@@ -3,7 +3,6 @@
 
 using namespace std;
 
-//by reference with pointer
 void check(int &a, int &b, int &c){
     int artBA = (b - a);
     int artCB = (c - b);
