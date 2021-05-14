@@ -13,6 +13,6 @@ int main(){
     cin.tie(0);
 
     int x[] = {2,3,6,37,5,8,6,4,6};
-    
-    cout << "Distance : "<< dist(&x[3], &x[8]) <<"\n";
+
+    cout << "Distance : "<< dist(&x[0], &x[8]) <<"\n";
 }   
