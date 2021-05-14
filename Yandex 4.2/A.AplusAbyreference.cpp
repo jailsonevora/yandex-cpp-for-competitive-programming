@@ -22,6 +22,7 @@ int main(){
     
     //call by reference
     f(a);
+
     //call by reference with pointer
     //f(&a);
 
