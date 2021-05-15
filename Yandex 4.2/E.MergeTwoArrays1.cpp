@@ -3,13 +3,49 @@
 
 using namespace std;
 
+void mergeHalves(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc);
+void mergeC(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc);
+
 void merge(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc){
 
-    for (; *ptrBgA != *ptrEnA ; ++ptrBgA, ++ptrBgc)
-        *ptrBgc = *ptrBgA;
+    mergeC(ptrBgA, ptrEnA,ptrBgB,ptrEnB,ptrBgc);
+}
 
-    for (; *ptrBgB != *ptrEnB ; ++ptrBgB, ++ptrBgc)
+void mergeC(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc){
+
+    if(*ptrBgA == *ptrEnB)
+        return;
+    mergeHalves(ptrBgA, ptrEnA,ptrBgB,ptrEnB,ptrBgc);
+}
+void mergeHalves(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc){
+
+    while (*ptrBgA != *ptrEnA && ptrBgB != ptrEnB)
+    {
+        if(*ptrBgA <= *ptrBgB){
+            *ptrBgc = *ptrBgA;
+            *ptrBgA++;
+        }
+        else{
+            *ptrBgc = *ptrBgB;
+            *ptrBgB++;
+        }
+        *ptrBgc++;
+    }
+    // Copy the remaining elements of
+    // *ptrBgA, if there are any
+    while (*ptrBgA != *ptrEnA) {
+        *ptrBgc = *ptrBgA;
+        *ptrBgA++;
+        *ptrBgc++;
+    }
+ 
+    // Copy the remaining elements of
+    // *ptrBgB, if there are any
+    while (*ptrBgB != *ptrEnB) {
         *ptrBgc = *ptrBgB;
+        *ptrBgB++;
+        *ptrBgc++;
+    }
 }
 
 int main(){
@@ -18,7 +54,7 @@ int main(){
 
     int n = 5;
     int a[n] = {2,4,6,8,9};
-    int b[n] = {32,7,5,23,14};
+    int b[n] = {3,5,7,10,14};
     int c[n*2];
 
     int *ptrBgA = &a[0]; 
