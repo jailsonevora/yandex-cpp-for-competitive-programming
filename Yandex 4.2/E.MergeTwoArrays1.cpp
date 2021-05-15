@@ -4,14 +4,9 @@
 using namespace std;
 
 void mergeHalves(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc);
-void mergeC(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc);
+void merge(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc);
 
 void merge(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc){
-
-    mergeC(ptrBgA, ptrEnA,ptrBgB,ptrEnB,ptrBgc);
-}
-
-void mergeC(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc){
 
     if(*ptrBgA == *ptrEnB)
         return;
@@ -19,7 +14,7 @@ void mergeC(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc){
 }
 void mergeHalves(int *ptrBgA, int *ptrEnA, int *ptrBgB, int *ptrEnB, int *ptrBgc){
 
-    while (*ptrBgA != *ptrEnA && ptrBgB != ptrEnB)
+    while (*ptrBgA != *ptrEnA && *ptrBgB != *ptrEnB)
     {
         if(*ptrBgA <= *ptrBgB){
             *ptrBgc = *ptrBgA;
