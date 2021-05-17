@@ -12,7 +12,7 @@ struct Rectangle
     }
     int get(){
         int c = (a*a) + (b*b);
-        return std::sqrt(c);
+        return sqrt(c);
     }
 };
 
