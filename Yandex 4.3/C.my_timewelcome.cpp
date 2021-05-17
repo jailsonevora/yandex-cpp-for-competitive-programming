@@ -7,14 +7,12 @@ using namespace std;
 
 struct my_time
 {
-
-
-    int day = 0, hour = 0, minute = 0, second = 0;
-    void set(int t){
+    long long day = 0, hour = 0, minute = 0, second = 0;
+    void set(long long t){
           
-        int dayR = t % 86400;
-        int hourR = dayR % 3600;
-        int minuteR = hourR % 60;
+        long long dayR = t % 86400;
+        long long hourR = dayR % 3600;
+        long long minuteR = hourR % 60;
 
         day = t / 86400;
         hour = dayR / 3600;
