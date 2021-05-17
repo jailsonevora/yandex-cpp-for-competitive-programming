@@ -23,6 +23,5 @@ int main(){
     Rectangle r;
 
     r.set(3,4);
-
     cout << r.get();
 }   
