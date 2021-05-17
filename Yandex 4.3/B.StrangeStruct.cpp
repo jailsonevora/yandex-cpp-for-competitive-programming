@@ -16,12 +16,7 @@ struct strange_struct
 };
 
 long long f(strange_struct *str){
-    long long wa = (long long) str->a;
-    long long wb = (long long) str->b;
-    long long wc = (long long) str->c;
-    long long wd = (long long) str->d;
-    long long wqueue = (long long) str->queue;
-      return  wa + wb + wc + wd + wqueue;
+    return (long long) str->a + (long long) str->b + (long long) str->c + (long long) str->d + (long long) str->queue;
 }
 
 
