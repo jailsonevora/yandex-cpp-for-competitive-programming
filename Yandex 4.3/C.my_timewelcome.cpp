@@ -3,8 +3,6 @@
 
 using namespace std;
 
-
-
 struct my_time
 {
     long long day = 0, hour = 0, minute = 0, second = 0;
