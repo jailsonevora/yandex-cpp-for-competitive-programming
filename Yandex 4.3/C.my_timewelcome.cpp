@@ -10,7 +10,7 @@ struct my_time
     long long day = 0, hour = 0, minute = 0, second = 0;
     void set(long long t){
           
-        long long dayR = t % 86400;
+        long long dayR = abs(t) % 86400;
         long long hourR = dayR % 3600;
         long long minuteR = hourR % 60;
 
