@@ -11,8 +11,7 @@ struct Rectangle
         b = bR;
     }
     int get(){
-        int c = (a*a) + (b*b);
-        return sqrt(c);
+        return (a*a) + (b*b);
     }
 };
 
