@@ -62,7 +62,7 @@ node *mergeHalves(node *ptrLA, node *ptrLB){
     // *ptrLB, if there are any
     while (tempB != NULL) {
         tempM = new node;
-        tempM->val = tempA->val;
+        tempM->val = tempB->val;
         tempM->next = temp;
         temp = tempM;
 
