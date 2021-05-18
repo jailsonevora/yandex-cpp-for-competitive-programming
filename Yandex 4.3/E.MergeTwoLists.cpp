@@ -10,7 +10,7 @@ struct node
     int val;
 };
 
-int get(node *str){
+int getSize(node *str){
 
     node *temp = str;
     int count = 0;
@@ -24,43 +24,51 @@ int get(node *str){
 node *mergeHalves(node *ptrLA, node *ptrLB){
 
     node *temp = NULL;
+    node *tempM = NULL;
+    node *tempA = ptrLA;
+    node *tempB = ptrLB;
 
-    while (ptrLA != NULL && ptrLB != NULL)
+    while (tempA != NULL && tempB != NULL)
     {
-        if(ptrLA->val <= ptrLB->val){
+        if(tempA->val <= tempB->val){
+            tempM = tempA;
             temp = new node;
-            temp->val= ptrLA->val;
-            temp->next = NULL;
-            ptrLA = ptrLA->next;
+            temp->val= tempA->val;
+            temp->next = tempM;
+            tempM = temp;
+
+            tempA = tempA->next;
         }
         else{
+            tempM = tempB;
             temp = new node;
-            temp->val= ptrLB->val;
-            temp->next = NULL;
-            ptrLB = ptrLB->next;
+            temp->val= tempB->val;
+            temp->next = tempM;
+            tempM = temp;
+
+            tempB = tempB->next;
         }
-        temp = temp->next;
     }
     // Copy the remaining elements of
     // *ptrLA, if there are any
-    while (ptrLA != NULL) {
+    while (tempA != NULL) {
+        tempM = tempA;
         temp = new node;
-        temp->val= ptrLA->val;
-        temp->next = NULL;
+        temp->val= tempA->val;
+        temp->next = tempM;
 
-        ptrLA = ptrLA->next;
-        temp = temp->next;
+        tempA = tempA->next;
     }
  
     // Copy the remaining elements of
     // *ptrLB, if there are any
-    while (ptrLB != NULL) {
+    while (tempB != NULL) {
+        tempM = tempB;
         temp = new node;
-        temp->val= ptrLB->val;
-        temp->next = NULL;
+        temp->val= tempB->val;
+        temp->next = tempM;
 
-        ptrLB = ptrLB->next;
-        temp = temp->next;
+        tempB = tempB->next;
     }
     return temp;
 }
@@ -72,6 +80,9 @@ void merge(node *ptrLA, node *ptrLB){
     mergeHalves(ptrLA, ptrLB);
 }
 
+/* Given a reference (pointer to pointer)
+to the head of a list and an int, inserts
+a new node on the front of the list. */
 void push(node** head_ref, int new_data)
 {
     /* 1. allocate node */
@@ -87,31 +98,62 @@ void push(node** head_ref, int new_data)
     (*head_ref) = new_node;
 }
 
+/* Given a reference (pointer to pointer) to the head
+of a list and an int, appends a new node at the end */
+void append(node** head_ref, int new_data)
+{
+    /* 1. allocate node */
+    node* new_node = new node();
+ 
+    node *last = *head_ref; /* used in step 5*/
+ 
+    /* 2. put in the data */
+    new_node->val = new_data;
+ 
+    /* 3. This new node is going to be
+    the last node, so make next of
+    it as NULL*/
+    new_node->next = NULL;
+ 
+    /* 4. If the Linked List is empty,
+    then make the new node as head */
+    if (*head_ref == NULL)
+    {
+        *head_ref = new_node;
+        return;
+    }
+ 
+    /* 5. Else traverse till the last node */
+    while (last->next != NULL)
+        last = last->next;
+ 
+    /* 6. Change the next of last node */
+    last->next = new_node;
+    return;
+}
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
     /* Start with the empty list */   
     node *ptrLA = NULL;
-    node *ptrLAHead = NULL;
-
     node *ptrLB = NULL;
-    node *ptrLBHead = NULL;
-
   
     /* Use push() to construct below list */
-    push(&ptrLA,1); 
-    push(&ptrLA,3); 
-    push(&ptrLA,5); 
-    push(&ptrLA,6); 
     push(&ptrLA,8);
+    push(&ptrLA,6); 
+    push(&ptrLA,5); 
+    push(&ptrLA,3);
+    push(&ptrLA,1); 
 
-    push(&ptrLB,2); 
-    push(&ptrLB,4); 
-    push(&ptrLB,7); 
     push(&ptrLB,9); 
-    push(&ptrLB,8);    
+    push(&ptrLB,8);
+    push(&ptrLB,7);
+    push(&ptrLB,4);
+    push(&ptrLB,2);
+        
 
     node *temp = mergeHalves(ptrLA, ptrLB);
-    cout<<"count of nodes is "<< get(temp);
+    cout<<"count of nodes is "<< getSize(temp);
 }   
