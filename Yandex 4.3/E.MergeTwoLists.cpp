@@ -148,12 +148,14 @@ int main(){
     node *ptrLB = NULL;
   
     /* Use push() to construct below list */
+    //1->3->5->6->8
     push(&ptrLA,8);
     push(&ptrLA,6); 
     push(&ptrLA,5); 
     push(&ptrLA,3);
     push(&ptrLA,1); 
 
+    //2->4->7->8->9
     push(&ptrLB,9); 
     push(&ptrLB,8);
     push(&ptrLB,7);
