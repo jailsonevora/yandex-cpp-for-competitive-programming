@@ -30,63 +30,6 @@ void print(node *str){
     }
 }
 
-node *mergeHalves(node *ptrLA, node *ptrLB){
-
-    node *temp = NULL;
-    node *tempM = temp;
-    node *tempA = ptrLA;
-    node *tempB = ptrLB;
-
-    while (tempA != NULL && tempB != NULL)
-    {
-        if(tempA->val <= tempB->val){
-            tempM = new node;
-            tempM->val = tempA->val;
-            tempM->next = temp;
-            temp = tempM;
-
-            tempA = tempA->next;
-        }
-        else{
-            tempM = new node;
-            tempM->val = tempB->val;
-            tempM->next = temp;
-            temp = tempM;
-
-            tempB = tempB->next;
-        }
-    }
-    // Copy the remaining elements of
-    // *ptrLA, if there are any
-    while (tempA != NULL) {
-        tempM = new node;
-        tempM->val = tempA->val;
-        tempM->next = temp;
-        temp = tempM;
-
-        tempA = tempA->next;
-    }
- 
-    // Copy the remaining elements of
-    // *ptrLB, if there are any
-    while (tempB != NULL) {
-        tempM = new node;
-        tempM->val = tempB->val;
-        tempM->next = temp;
-        temp = tempM;
-
-        tempB = tempB->next;
-    }
-    return temp;
-}
-
-void merge(node *ptrLA, node *ptrLB){
-
-    if(ptrLA == ptrLB)
-        return;
-    mergeHalves(ptrLA, ptrLB);
-}
-
 /* Given a reference (pointer to pointer)
 to the head of a list and an int, inserts
 a new node on the front of the list. */
@@ -139,6 +82,102 @@ void append(node** head_ref, int new_data)
     return;
 }
 
+node *mergeHalvesPrepend(node *ptrLA, node *ptrLB){
+
+    node *temp = NULL;
+    node *tempM = temp;
+    node *tempA = ptrLA;
+    node *tempB = ptrLB;
+
+    while (tempA != NULL && tempB != NULL)
+    {
+        if(tempA->val <= tempB->val){
+            tempM = new node;
+            tempM->val = tempA->val;
+            tempM->next = temp;
+            temp = tempM;
+
+            tempA = tempA->next;
+        }
+        else{
+            tempM = new node;
+            tempM->val = tempB->val;
+            tempM->next = temp;
+            temp = tempM;
+
+            tempB = tempB->next;
+        }
+    }
+    // Copy the remaining elements of
+    // *ptrLA, if there are any
+    while (tempA != NULL) {
+        tempM = new node;
+        tempM->val = tempA->val;
+        tempM->next = temp;
+        temp = tempM;
+
+        tempA = tempA->next;
+    }
+ 
+    // Copy the remaining elements of
+    // *ptrLB, if there are any
+    while (tempB != NULL) {
+        tempM = new node;
+        tempM->val = tempB->val;
+        tempM->next = temp;
+        temp = tempM;
+
+        tempB = tempB->next;
+    }
+    return temp;
+}
+
+node *mergeHalvesApend(node *ptrLA, node *ptrLB){
+
+    node *temp = NULL;
+    node *tempM = temp;
+    node *tempA = ptrLA;
+    node *tempB = ptrLB;
+
+    while (tempA != NULL && tempB != NULL)
+    {
+        if(tempA->val <= tempB->val){
+            append(&temp, tempA->val);
+
+            tempA = tempA->next;
+        }
+        else{
+            append(&temp, tempB->val);
+
+            tempB = tempB->next;
+        }
+    }
+    // Copy the remaining elements of
+    // *ptrLA, if there are any
+    while (tempA != NULL) {
+        append(&temp, tempA->val);
+
+        tempA = tempA->next;
+    }
+ 
+    // Copy the remaining elements of
+    // *ptrLB, if there are any
+    while (tempB != NULL) {
+        append(&temp, tempB->val);
+
+        tempB = tempB->next;
+    }
+    return temp;
+}
+
+node *merge(node *ptrLA, node *ptrLB){
+
+    if(ptrLA == ptrLB)
+        return NULL;
+    return mergeHalvesApend(ptrLA, ptrLB);
+}
+
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -160,10 +199,9 @@ int main(){
     push(&ptrLB,8);
     push(&ptrLB,7);
     push(&ptrLB,4);
-    push(&ptrLB,2);
-        
+    push(&ptrLB,2);        
 
-    node *temp = mergeHalves(ptrLA, ptrLB);
+    node *temp = merge(ptrLA, ptrLB);
     cout<<"count of nodes is "<< getSize(temp) << "\n";
     print(temp);
 
