@@ -21,6 +21,15 @@ int getSize(node *str){
     return count;
 }
 
+void print(node *str){
+
+    node *temp = str;
+    while(temp != NULL){
+        cout << temp ->val << "\n";
+        temp = temp->next;
+    }
+}
+
 node *mergeHalves(node *ptrLA, node *ptrLB){
 
     node *temp = NULL;
@@ -153,5 +162,7 @@ int main(){
         
 
     node *temp = mergeHalves(ptrLA, ptrLB);
-    cout<<"count of nodes is "<< getSize(temp);
+    cout<<"count of nodes is "<< getSize(temp) << "\n";
+    print(temp);
+
 }   
