@@ -24,27 +24,25 @@ int getSize(node *str){
 node *mergeHalves(node *ptrLA, node *ptrLB){
 
     node *temp = NULL;
-    node *tempM = NULL;
+    node *tempM = temp;
     node *tempA = ptrLA;
     node *tempB = ptrLB;
 
     while (tempA != NULL && tempB != NULL)
     {
         if(tempA->val <= tempB->val){
-            tempM = tempA;
-            temp = new node;
-            temp->val= tempA->val;
-            temp->next = tempM;
-            tempM = temp;
+            tempM = new node;
+            tempM->val = tempA->val;
+            tempM->next = temp;
+            temp = tempM;
 
             tempA = tempA->next;
         }
         else{
-            tempM = tempB;
-            temp = new node;
-            temp->val= tempB->val;
-            temp->next = tempM;
-            tempM = temp;
+            tempM = new node;
+            tempM->val = tempB->val;
+            tempM->next = temp;
+            temp = tempM;
 
             tempB = tempB->next;
         }
@@ -52,10 +50,10 @@ node *mergeHalves(node *ptrLA, node *ptrLB){
     // Copy the remaining elements of
     // *ptrLA, if there are any
     while (tempA != NULL) {
-        tempM = tempA;
-        temp = new node;
-        temp->val= tempA->val;
-        temp->next = tempM;
+        tempM = new node;
+        tempM->val = tempA->val;
+        tempM->next = temp;
+        temp = tempM;
 
         tempA = tempA->next;
     }
@@ -63,10 +61,10 @@ node *mergeHalves(node *ptrLA, node *ptrLB){
     // Copy the remaining elements of
     // *ptrLB, if there are any
     while (tempB != NULL) {
-        tempM = tempB;
-        temp = new node;
-        temp->val= tempB->val;
-        temp->next = tempM;
+        tempM = new node;
+        tempM->val = tempA->val;
+        tempM->next = temp;
+        temp = tempM;
 
         tempB = tempB->next;
     }
