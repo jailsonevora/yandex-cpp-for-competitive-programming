@@ -13,7 +13,7 @@ struct vectorMy
     vectorMy(int n){;
         a = new int[n];
         capacity = n;
-        current = 0;
+        current = n;
 
         for (int i = 0; i < n; i++)
             a[i] = 0;         
@@ -22,7 +22,7 @@ struct vectorMy
     vectorMy(int n, int val){
        a = new int[n];
         capacity = n;
-        current = 0;
+        current = n;
 
         for (int i = 0; i < n; i++)
             a[i] = val; 
@@ -62,7 +62,7 @@ struct vectorMy
     }
 
     int size(){
-        return capacity;
+        return current;
     }
 
 };
