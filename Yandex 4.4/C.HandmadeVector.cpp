@@ -4,14 +4,14 @@
 
 using namespace std;
 
-template <typename T> struct vectorMy
+struct vectorMy
 {   
-    T* a;
+    int* a;
     int capacity;
     int current;
 
     vectorMy(int n){;
-        a = new T[n];
+        a = new int[n];
         capacity = n;
         current = 0;
 
@@ -20,7 +20,7 @@ template <typename T> struct vectorMy
     }
 
     vectorMy(int n, int val){
-       a = new T[n];
+       a = new int[n];
         capacity = n;
         current = 0;
 
@@ -34,7 +34,7 @@ template <typename T> struct vectorMy
         // accommodate more elements. We need to double the
         // capacity
         if (current == capacity) {
-            T* temp = new T[2 * capacity];
+            int* temp = new int[2 * capacity];
  
             // copying old array elements to new array
             for (int i = 0; i < capacity; i++) {
@@ -56,12 +56,12 @@ template <typename T> struct vectorMy
         current--;
     }
 
-    T get(int i){
+    int get(int i){
         if (i < current)
             return a[i];
     }
 
-    T size(){
+    int size(){
         return current;
     }
 
@@ -71,6 +71,5 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vectorMy<int> v = vectorMy<int>(10, 17);
-    v.push_back(11);
+    vectorMy(10, 17).push_back(11);
 }   
