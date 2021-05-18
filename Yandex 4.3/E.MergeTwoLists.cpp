@@ -110,9 +110,7 @@ int main(){
     push(&ptrLB,4); 
     push(&ptrLB,7); 
     push(&ptrLB,9); 
-    push(&ptrLB,8);
-
-    
+    push(&ptrLB,8);    
 
     node *temp = mergeHalves(ptrLA, ptrLB);
     cout<<"count of nodes is "<< get(temp);
