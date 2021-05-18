@@ -62,7 +62,7 @@ struct vectorMy
     }
 
     int size(){
-        return current;
+        return capacity;
     }
 
 };
@@ -71,5 +71,9 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vectorMy(10, 17).push_back(11);
+    vectorMy v(10,17);    
+
+    for (int i = 0; i < v.size(); i++)
+        cout << v.get(i) << " ";
+    
 }   
