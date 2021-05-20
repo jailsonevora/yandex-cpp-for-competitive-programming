@@ -18,9 +18,18 @@ struct my_time
         minute = hourR / 60;
         second = minuteR;                 
     }
-    
+
     my_time operator - (const my_time& other) const{
-        return {day - other.day, hour - other.hour, minute - other.minute, second - other.second};
+        my_time t {day - other.day, hour - other.hour, minute - other.minute, second - other.second};
+        if(other.second >= t.second){
+            t.second += 60;
+            --t.minute;
+        }
+        if(other.minute >= t.minute){
+            t.minute += 60;
+            --t.hour;
+        }
+        return t;
     }
 };
 
