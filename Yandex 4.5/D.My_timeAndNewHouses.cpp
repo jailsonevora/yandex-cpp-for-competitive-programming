@@ -22,7 +22,7 @@ struct my_time
         return std::tie(day, hour, minute, second) != std::tie(other.day, other.hour, other.minute, other.second);
     }
 
-    my_time operator - (my_time& other){
+    bool operator - (my_time& other){
         if(other.second > second){
             second += 60;
             --minute;
@@ -35,7 +35,11 @@ struct my_time
             hour += 60;
             --day;
         }
-        return day - other.day, hour - other.hour, minute - other.minute, second - other.second};
+        long long d = day - other.day;
+        long long h = hour - other.hour;
+        long long m = minute - other.minute;
+        long long s = second - other.second;
+        return false;
     }
 };
 
