@@ -29,6 +29,10 @@ struct my_time
             t.minute += 60;
             --t.hour;
         }
+        if(other.hour >= t.hour){
+            t.hour += 60;
+            --t.day;
+        }
         return t;
     }
 };
