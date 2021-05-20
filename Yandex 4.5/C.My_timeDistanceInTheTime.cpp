@@ -18,6 +18,8 @@ struct my_time
         minute = hourR / 60;
         second = minuteR;                 
     }
+
+    
     my_time operator - (my_time& other){
         if(other.second > second){
             second += 60;
@@ -43,7 +45,7 @@ int main(){
     cin.tie(0);
 
     my_time t; 
-    t.set(86401);
+    t.set(8640150);
 
     my_time other {5,7,12,15};
 
