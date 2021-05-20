@@ -19,9 +19,35 @@ struct my_time
         second = minuteR;                 
     }
 
+    // bool operator < (const my_time& other) const{
+    //     return std::tie(day, hour, minute, second) < std::tie(other.day, other.hour, other.minute, other.second);
+    // }
+    // or
     bool operator < (const my_time& other) const{
-        return std::tie(day, hour, minute, second) < std::tie(other.day, other.hour, other.minute, other.second);
-    }
+    	
+        if(day == other.day)
+    	{
+         	if(hour == other.hour)
+         	{
+                if(minute == other.minute)
+                {
+                    return second < other.second;
+                }
+                else
+                {
+                    return minute < other.minute;
+                }
+         	}
+         	else
+         	{
+             	return hour < other.hour;
+         	}
+    	}
+    	else
+    	{
+        	return day < other.day;
+    	}
+	}
 };
 
 int main(){
