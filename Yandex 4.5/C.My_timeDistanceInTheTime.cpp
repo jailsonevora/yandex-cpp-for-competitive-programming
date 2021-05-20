@@ -19,7 +19,6 @@ struct my_time
         second = minuteR;                 
     }
     my_time operator - (my_time& other){
-        my_time t {day - other.day, hour - other.hour, minute - other.minute, second - other.second};
         if(other.second > second){
             second += 60;
             --minute;
@@ -32,6 +31,7 @@ struct my_time
             hour += 60;
             --day;
         }
+        my_time t {day - other.day, hour - other.hour, minute - other.minute, second - other.second};
         return t;
     }
 };
