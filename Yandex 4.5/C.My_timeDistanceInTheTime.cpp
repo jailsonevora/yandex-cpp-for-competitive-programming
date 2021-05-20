@@ -18,24 +18,25 @@ struct my_time
         minute = hourR / 60;
         second = minuteR;                 
     }
-
-    my_time operator - (const my_time& other) const{
+    my_time operator - (my_time& other){
         my_time t {day - other.day, hour - other.hour, minute - other.minute, second - other.second};
-        if(other.second >= t.second){
-            t.second += 60;
-            --t.minute;
+        if(other.second > second){
+            second += 60;
+            --minute;
         }
-        if(other.minute >= t.minute){
-            t.minute += 60;
-            --t.hour;
+        if(other.minute > minute){
+            minute += 60;
+            --hour;
         }
-        if(other.hour >= t.hour){
-            t.hour += 60;
-            --t.day;
+        if(other.hour > hour){
+            hour += 60;
+            --day;
         }
         return t;
     }
 };
+
+    
 
 int main(){
     ios::sync_with_stdio(false);
