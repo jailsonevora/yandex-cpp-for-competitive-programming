@@ -4,46 +4,54 @@
 
 using namespace std;
 
-struct my_time
-{
-    long long day = 0, hour = 0, minute = 0, second = 0;
-    long long floor = 0, flat = 0;
 
-    my_time(long long floorC, long long flatC, my_time builtTimeSec){
-        day = builtTimeSec.day;
-        hour = builtTimeSec.hour;
-        minute = builtTimeSec.minute;
-        second = builtTimeSec.second;
+
+struct house
+{
+    struct my_time
+    {
+        long long day = 0, hour = 0, minute = 0, second = 0;
+
+        void set(my_time& builtTimeSec){
+            day = builtTimeSec.day;
+            hour = builtTimeSec.hour;
+            minute = builtTimeSec.minute;
+            second = builtTimeSec.second;
+        }
+
+        my_time operator - (my_time& other){
+            if(other.second > second){
+                second += 60;
+                --minute;
+            }
+            if(other.minute > minute){
+                minute += 60;
+                --hour;
+            }
+            if(other.hour > hour){
+                hour += 60;
+                --day;
+            }
+            return {day - other.day, hour - other.hour, minute - other.minute, second - other.second};
+        }
+
+        public : bool difference(house& builtTimeSec, my_time& other){
+            return (builtTimeSec.built - other)==1 ? true : false;
+        }
+    };
+    long long floor = 0, flat = 0;
+    my_time built;
+
+    house(long long floorC, long long flatC, my_time& builtTimeSec){
         floor = floorC;
         flat = flatC;
-    }
+        built = builtTimeSec;
+    }   
 
-    bool operator != (const my_time& other) const{
-        return std::tie(day, hour, minute, second) != std::tie(other.day, other.hour, other.minute, other.second);
+    bool operator != (const house& other) const{
+        return std::tie(floor, flat) != std::tie(other.floor, other.flat) && difference(built, other);
     }
-
-    bool operator - (my_time& other){
-        if(other.second > second){
-            second += 60;
-            --minute;
-        }
-        if(other.minute > minute){
-            minute += 60;
-            --hour;
-        }
-        if(other.hour > hour){
-            hour += 60;
-            --day;
-        }
-        long long d = day - other.day;
-        long long h = hour - other.hour;
-        long long m = minute - other.minute;
-        long long s = second - other.second;
-        return false;
-    }
-};
-
-    
+};   
 
 int main(){
     ios::sync_with_stdio(false);
