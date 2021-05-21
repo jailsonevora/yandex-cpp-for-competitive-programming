@@ -31,6 +31,10 @@ struct house
         return std::tie(floor, flat) == std::tie(other.floor, other.flat);
     }
 
+    bool operator != (house& other) {
+        return std::tie(floor, flat) != std::tie(other.floor, other.flat);
+    }
+
     bool operator - (my_time& other){
         if(other.second > built.second){
             built.second += 60;
