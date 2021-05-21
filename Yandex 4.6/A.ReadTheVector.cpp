@@ -39,7 +39,5 @@ int main(){
     cin.tie(0);
 
     std::vector<int> a;
-
     read(a);
-
 }   
