@@ -60,5 +60,4 @@ int main(){
     // my_time result = t - other;
 
     // cout << result.day << " " << result.hour << " " << result.minute << " " << result.second << "\n";
-
 }   
