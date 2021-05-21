@@ -4,20 +4,20 @@
 
 using namespace std;
 
-struct house
+struct my_time
 {
-    struct my_time
-    {
-        long long day = 0, hour = 0, minute = 0, second = 0;
+    long long day = 0, hour = 0, minute = 0, second = 0;
 
-        void set(my_time& builtTimeSec){
-            day = builtTimeSec.day;
-            hour = builtTimeSec.hour;
-            minute = builtTimeSec.minute;
-            second = builtTimeSec.second;
-        }      
-    };
+    void set(my_time& builtTimeSec){
+        day = builtTimeSec.day;
+        hour = builtTimeSec.hour;
+        minute = builtTimeSec.minute;
+        second = builtTimeSec.second;
+    }      
+};
 
+struct house
+{  
     long long floor = 0, flat = 0;
     my_time built;
 
@@ -27,28 +27,27 @@ struct house
         built = builtTimeSec;
     }   
 
-    bool operator != (house& other) {
-        my_time m = built - other.built;
-        return std::tie(floor, flat) != std::tie(other.floor, other.flat) && ( m.minute >= 10 ? true : false);
+    bool operator == (house& other) {
+        return std::tie(floor, flat) == std::tie(other.floor, other.flat);
     }
 
-    my_time operator - (house& other){
-        if(other.built.second > built.second){
+    bool operator - (my_time& other){
+        if(other.second > built.second){
             built.second += 60;
             --built.minute;
         }
-        if(other.built.minute > built.minute){
+        if(other.minute > built.minute){
             built.minute += 60;
             --built.hour;
         }
-        if(other.built.hour > built.hour){
+        if(other.hour > built.hour){
             built.hour += 60;
             --built.day;
         }
-        return {built.day - other.built.day, built.hour - other.built.hour, built.minute - other.built.minute, built.second - other.built.second};
+        my_time t {built.day - other.day, built.hour - other.hour, built.minute - other.minute, built.second - other.second};
+        return (t.minute >= 10 ? true : false);
     }
 };  
-
 
 int main(){
     ios::sync_with_stdio(false);
