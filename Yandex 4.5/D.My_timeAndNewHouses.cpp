@@ -49,7 +49,7 @@ struct house
             --built.day;
         }
         my_time t {built.day - other.day, built.hour - other.hour, built.minute - other.minute, built.second - other.second};
-        return (t.minute >= 10 ? true : false);
+        return (t.minute < 10 ? true : false);
     }
 };  
 
