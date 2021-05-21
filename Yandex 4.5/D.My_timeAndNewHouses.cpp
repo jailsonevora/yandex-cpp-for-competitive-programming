@@ -4,8 +4,6 @@
 
 using namespace std;
 
-
-
 struct house
 {
     struct my_time
@@ -17,28 +15,9 @@ struct house
             hour = builtTimeSec.hour;
             minute = builtTimeSec.minute;
             second = builtTimeSec.second;
-        }
-
-        my_time operator - (my_time& other){
-            if(other.second > second){
-                second += 60;
-                --minute;
-            }
-            if(other.minute > minute){
-                minute += 60;
-                --hour;
-            }
-            if(other.hour > hour){
-                hour += 60;
-                --day;
-            }
-            return {day - other.day, hour - other.hour, minute - other.minute, second - other.second};
-        }
-
-        public : bool difference(house& builtTimeSec, my_time& other){
-            return (builtTimeSec.built - other)==1 ? true : false;
-        }
+        }      
     };
+
     long long floor = 0, flat = 0;
     my_time built;
 
@@ -48,10 +27,28 @@ struct house
         built = builtTimeSec;
     }   
 
-    bool operator != (const house& other) const{
-        return std::tie(floor, flat) != std::tie(other.floor, other.flat) && difference(built, other);
+    bool operator != (house& other) {
+        my_time m = built - other.built;
+        return std::tie(floor, flat) != std::tie(other.floor, other.flat) && ( m.minute >= 10 ? true : false);
     }
-};   
+
+    my_time operator - (house& other){
+        if(other.built.second > built.second){
+            built.second += 60;
+            --built.minute;
+        }
+        if(other.built.minute > built.minute){
+            built.minute += 60;
+            --built.hour;
+        }
+        if(other.built.hour > built.hour){
+            built.hour += 60;
+            --built.day;
+        }
+        return {built.day - other.built.day, built.hour - other.built.hour, built.minute - other.built.minute, built.second - other.built.second};
+    }
+};  
+
 
 int main(){
     ios::sync_with_stdio(false);
