@@ -7,16 +7,16 @@
 using namespace std;
 
 
-// std::vector<int> read()
-// {
-//     std::vector<int> v;
-//     int a;
-//     while (cin >> a){
-//         cin.clear();
-//         v.push_back(a);        
-//     }
-//     return v;
-// };
+std::vector<int> read(int n)
+{
+    std::vector<int> v;
+    int a;
+    while (cin >> a){
+        cin.clear();
+        v.push_back(a);        
+    }
+    return v;
+};
 
 std::vector<int> read(){
     std::string line;
