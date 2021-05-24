@@ -12,7 +12,7 @@ int main(){
 
     std::string line;
     vector<int> v = {1,4,5,7,23,52,9};
-    int n = 0, t = 0, size = 0, val = 0, ith = 0;
+    int n = 0, t = 0, size = 0, val = 0, i = 0;
 
     cin >> n;
     cin.ignore();
@@ -39,8 +39,8 @@ int main(){
             break;
 
             case 4:
-                ith = line[1];
-                (ith < 0 && ith > v.size()) ? cout << "Out of bounds" << "\n" : cout << v[ith] << "\n";
+                i = line[1];
+                (i < 0 && i > v.size()) ? cout << "Out of bounds" << "\n" : cout << v[i] << "\n";
             break;
 
             case 5:
@@ -57,12 +57,14 @@ int main(){
             break;
 
             case 8:
-                ith = line[1];
-                if(ith >= 0 && ith < v.size()) v.erase(v.begin()+ith);
+                i = line[1];
+                if(i >= 0 && i < v.size()) v.erase(v.begin()+i);
             break;
 
             case 9:
-            /* code */
+                i = line[1];
+                val = line[2];
+                if(i >= 0 && i < v.size()) v.insert(v.begin()+i, val);
             break;
 
             case 10:
