@@ -52,8 +52,8 @@ int main(){
 
             case 4:{
                 i = arrParam[1];
-                if(i < 0 && i > v.size()) cout << "Out of bounds" << "\n"; else cout << v[i] << "\n";
-            }break;
+                if(i < 0 || i > v.size()) cout << "Out of bounds" << "\n"; else cout << v[i] << "\n";
+            break;}
 
             case 5:{
                 cout << v.size() << "\n";
@@ -70,7 +70,7 @@ int main(){
 
             case 8:{
                 i = arrParam[1];
-                if(i >= 0 && i < v.size()) v.erase(v.begin()+i);
+                if(i >= 0 || i < v.size()) v.erase(v.begin()+i);
             }break;
 
             case 9:{
