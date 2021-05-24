@@ -27,10 +27,11 @@ int main(){
                 v.resize(size);
             }break;            
 
-            case 2:
+            case 2:{
                 n = line[1];
                 val = line[2];
                 v.assign(n,val);
+            }
             break;
 
             case 3:
@@ -73,13 +74,9 @@ int main(){
             break;
 
             case 10:
-                if (v.empty()) cout << "empty" << "\n"; else cout << v.back() << "\n";
-            break;
-        
-        default:
+                (v.empty()) ? cout << "empty" << "\n" : cout << v.back() << "\n";
             break;
         }
-    }
 
 
     
