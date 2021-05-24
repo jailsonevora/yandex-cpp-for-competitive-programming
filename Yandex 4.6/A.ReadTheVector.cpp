@@ -25,19 +25,10 @@ void read(std::vector<int> &v, int n)
     }
 };
 
-void read(std::vector<int> &v){
-    std::string line;
-    cin.ignore();
-    getline(cin, line);
-
-    for (int i = 0; i < line.size(); i++)
-        v.push_back(int(line[i]));
-}
-
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
     std::vector<int> a;
-    read(a);
+    read();
 }   

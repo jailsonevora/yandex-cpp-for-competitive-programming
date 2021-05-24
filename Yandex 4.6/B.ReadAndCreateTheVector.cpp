@@ -18,7 +18,7 @@ std::vector<int> read(int n)
     return v;
 };
 
-std::vector<int> read(){
+std::vector<int> readLine(){
     std::string line;
     std::vector<int> v;
     int num = 0;
@@ -37,5 +37,5 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    read();
+    read(3);
 }   
