@@ -52,7 +52,7 @@ int main(){
 
             case 4:{
                 i = arrParam[1];
-                (i < 0 && i > v.size()) ? cout << "Out of bounds" << "\n" : cout << v[i] << "\n";
+                if(i < 0 && i > v.size()) cout << "Out of bounds" << "\n"; else cout << v[i] << "\n";
             }break;
 
             case 5:{
