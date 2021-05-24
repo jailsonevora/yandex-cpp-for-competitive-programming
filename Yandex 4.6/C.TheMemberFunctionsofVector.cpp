@@ -16,10 +16,10 @@ int main(){
     long long val = 0, i = 0;
 
     cin >> n;
-    do{
-        cin.ignore();
+    cin.ignore();
+    do{        
         getline(cin, line);
-        t = line[0];
+        t = int(line[0]);
         switch (t)
         {
             case 1:{
