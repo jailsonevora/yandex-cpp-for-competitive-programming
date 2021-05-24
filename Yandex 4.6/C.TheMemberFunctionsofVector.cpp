@@ -40,11 +40,11 @@ int main(){
 
             case 4:
                 ith = line[1];
-                cout << v[ith] << "\n";
+                (ith < 0 && ith > v.size()) ? cout << "Out of bounds" << "\n" : cout << v[ith] << "\n";
             break;
 
             case 5:
-            /* code */
+                cout <<
             break;
 
             case 6:
