@@ -77,8 +77,4 @@ int main(){
                 (v.empty()) ? cout << "empty" << "\n" : cout << v.back() << "\n";
             break;
         }
-
-
-    
-
 }   
