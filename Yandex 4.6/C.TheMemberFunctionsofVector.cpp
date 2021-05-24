@@ -53,7 +53,7 @@ int main(){
             break;
 
             case 7:
-                ()
+                if(!v.empty()) v.pop_back();
             break;
 
             case 8:
