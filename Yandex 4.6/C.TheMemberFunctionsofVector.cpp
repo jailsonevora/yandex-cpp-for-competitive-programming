@@ -6,15 +6,16 @@
 
 using namespace std;
 
-int readLine(int &arr){
+void readLine(int *arr){
     std::string line; int num;
 
     getline(cin, line);
     stringstream ss(line);
 
-    while (!ss.eof())
+    for (int i = 0; !ss.eof(); i++){
         ss >> num;
-    return num;
+        arr[i] = num;
+    }
 }
 
 int main(){
@@ -25,11 +26,13 @@ int main(){
     int n = 0, t = 0, size = 0, count = 0;
     long long val = 0, i = 0;
     int arrParam[3];
+    int *ptr = arrParam;
 
     cin >> n;
     do
     {        
-        t = readLine(*arrParam);
+        readLine(ptr);
+        t = arrParam[0];
         switch (t)
         {
             case 1:{
