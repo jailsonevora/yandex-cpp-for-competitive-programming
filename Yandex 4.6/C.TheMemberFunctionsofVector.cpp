@@ -68,7 +68,7 @@ int main(){
             break;
 
             case 10:
-            /* code */
+                if (v.empty()) cout << "empty" << "\n"; else cout << v.back() << "\n";
             break;
         
         default:
