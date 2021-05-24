@@ -19,14 +19,16 @@ std::vector<int> read(int n)
     return v;
 };
 
-std::vector<int> read(const string &line, vector<int> &v){ 
-    
+std::vector<int> read(){
+    std::string line;
+    std::vector<int> v;
     int num = 0;
+
+    getline(cin, line);
     stringstream ss(line);
 
-    while (!ss.eof()) {
+    while (!ss.eof()){
         ss >> num;
-        cout << num;
         v.push_back(num);
     }
     return v;
@@ -36,9 +38,5 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    std::string line;
-    std::vector<int> v;
-    getline(cin, line);
-    
-    read(line, v);
+    read();
 }   
