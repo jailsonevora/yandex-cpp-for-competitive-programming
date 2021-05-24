@@ -6,30 +6,40 @@
 
 using namespace std;
 
+int readLine(int &arr){
+    std::string line; int num;
+
+    getline(cin, line);
+    stringstream ss(line);
+
+    while (!ss.eof())
+        ss >> num;
+    return num;
+}
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    std::string line;
     vector<int> v = {1,4,5,7,23,52,9};
     int n = 0, t = 0, size = 0, count = 0;
     long long val = 0, i = 0;
+    int arrParam[3];
 
     cin >> n;
     do
     {        
-        getline(cin, line);
-        t = int(line[0]);
-        switch (line[0])
+        t = readLine(*arrParam);
+        switch (t)
         {
             case 1:{
-                size = line[1]; 
+                size = arrParam[1]; 
                 v.resize(size);
             }break;            
 
             case 2:{
-                n = line[1];
-                val = line[2];
+                n = arrParam[1];
+                val = arrParam[2];
                 v.assign(n,val);
             }break;
 
@@ -38,7 +48,7 @@ int main(){
             break;
 
             case 4:{
-                i = line[1];
+                i = arrParam[1];
                 (i < 0 && i > v.size()) ? cout << "Out of bounds" << "\n" : cout << v[i] << "\n";
             }break;
 
@@ -47,7 +57,7 @@ int main(){
             }break;
 
             case 6:{
-                val = line[1];
+                val = arrParam[1];
                 v.push_back(val);
             }break;
 
@@ -56,13 +66,13 @@ int main(){
             }break;
 
             case 8:{
-                i = line[1];
+                i = arrParam[1];
                 if(i >= 0 && i < v.size()) v.erase(v.begin()+i);
             }break;
 
             case 9:{
-                i = line[1];
-                val = line[2];
+                i = arrParam[1];
+                val = arrParam[2];
                 if(i >= 0 && i < v.size()) v.insert(v.begin()+i, val);
             }break;
 
