@@ -16,11 +16,11 @@ int main(){
     long long val = 0, i = 0;
 
     cin >> n;
-    cin.ignore();
-    do{        
+    do
+    {        
         getline(cin, line);
         t = int(line[0]);
-        switch (t)
+        switch (line[0])
         {
             case 1:{
                 size = line[1]; 
@@ -31,8 +31,7 @@ int main(){
                 n = line[1];
                 val = line[2];
                 v.assign(n,val);
-            }
-            break;
+            }break;
 
             case 3:
                 v.clear();
@@ -41,37 +40,31 @@ int main(){
             case 4:{
                 i = line[1];
                 (i < 0 && i > v.size()) ? cout << "Out of bounds" << "\n" : cout << v[i] << "\n";
-            }
-            break;
+            }break;
 
             case 5:{
                 cout << v.size() << "\n";
-            }
-            break;
+            }break;
 
             case 6:{
                 val = line[1];
                 v.push_back(val);
-            }
-            break;
+            }break;
 
             case 7:{
                 if(!v.empty()) v.pop_back();
-            }
-            break;
+            }break;
 
             case 8:{
                 i = line[1];
                 if(i >= 0 && i < v.size()) v.erase(v.begin()+i);
-            }
-            break;
+            }break;
 
             case 9:{
                 i = line[1];
                 val = line[2];
                 if(i >= 0 && i < v.size()) v.insert(v.begin()+i, val);
-            }
-            break;
+            }break;
 
             case 10:
                 (v.empty()) ? cout << "empty" << "\n" : cout << v.back() << "\n";
