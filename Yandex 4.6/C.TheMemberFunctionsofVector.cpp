@@ -25,8 +25,7 @@ int main(){
             case 1:{
                 size = line[1]; 
                 v.resize(size);
-            }break;
-            
+            }break;            
 
             case 2:
                 n = line[1];
@@ -38,33 +37,39 @@ int main(){
                 v.clear();
             break;
 
-            case 4:
+            case 4:{
                 i = line[1];
                 (i < 0 && i > v.size()) ? cout << "Out of bounds" << "\n" : cout << v[i] << "\n";
+            }
             break;
 
-            case 5:
+            case 5:{
                 cout << v.size() << "\n";
+            }
             break;
 
-            case 6:
+            case 6:{
                 val = line[1];
                 v.push_back(val);
+            }
             break;
 
-            case 7:
+            case 7:{
                 if(!v.empty()) v.pop_back();
+            }
             break;
 
-            case 8:
+            case 8:{
                 i = line[1];
                 if(i >= 0 && i < v.size()) v.erase(v.begin()+i);
+            }
             break;
 
-            case 9:
+            case 9:{
                 i = line[1];
                 val = line[2];
                 if(i >= 0 && i < v.size()) v.insert(v.begin()+i, val);
+            }
             break;
 
             case 10:
