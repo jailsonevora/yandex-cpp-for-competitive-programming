@@ -57,7 +57,8 @@ int main(){
             break;
 
             case 8:
-            /* code */
+                ith = line[1];
+                if(ith >= 0 && ith < v.size()) v.erase(v.begin()+ith);
             break;
 
             case 9:
