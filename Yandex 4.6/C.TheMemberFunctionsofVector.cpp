@@ -27,7 +27,7 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vector<int> v = {1,4,5,7,23,52,9};
+    vector<int> v = {1,4,5,7,23,52,9,1,4,5,7,23,52,9,1,4,5,7,23,52,9};
     int n = 0, x = 0, t = 0, size = 0, count = 0;
     long long val = 0, i = 0;
     int arrParam[3];
@@ -36,8 +36,6 @@ int main(){
 
 
     ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.6/inputC.txt");
-
-    //cin >> x;
 
     while(getline(MyReadFile, line)){
         stringstream ss(line);
@@ -67,7 +65,7 @@ int main(){
 
             case 4:{
                 i = arrParam[1];
-                if(i < 0 || i > v.size()) cout << "Out of bounds" << "\n"; else cout << v.at(i) << "\n";
+                if(i < 0 || i >= v.size()) cout << "Out of bounds" << "\n"; else cout << v.at(i) << "\n";
             }break;
 
             case 5:{
@@ -98,7 +96,6 @@ int main(){
                 (v.empty()) ? cout << "empty" << "\n" : cout << v.back() << "\n";
             break;
         }
-        count++;
     }
     MyReadFile.close();
 }   
