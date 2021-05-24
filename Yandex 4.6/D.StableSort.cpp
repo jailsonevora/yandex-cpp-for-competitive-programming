@@ -16,8 +16,7 @@ int main(){
     cin.tie(0);
 
     vector<vector<int>> v;
-    int n = 0, x = 0, t = 0, size = 0, count = 0;
-    long long val = 0, i = 0;
+    int n = 0, count = 0;
     int arrParam[3];
     std::string line; int num;
 
