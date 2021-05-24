@@ -44,15 +44,16 @@ int main(){
             break;
 
             case 5:
-                cout <<
+                cout << v.size() << "\n";
             break;
 
             case 6:
-            /* code */
+                val = line[1];
+                v.push_back(val);
             break;
 
             case 7:
-            /* code */
+                ()
             break;
 
             case 8:
