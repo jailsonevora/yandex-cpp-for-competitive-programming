@@ -12,14 +12,14 @@ int main(){
 
     std::string line;
     vector<int> v = {1,4,5,7,23,52,9};
-    int n = 0, t = 0, size = 0, val = 0, i = 0;
+    int n = 0, t = 0, size = 0, count = 0;
+    long long val = 0, i = 0;
 
     cin >> n;
-    cin.ignore();
-    getline(cin, line);
-
-    t = line[0];
-
+    do{
+        cin.ignore();
+        getline(cin, line);
+        t = line[0];
         switch (t)
         {
             case 1:{
@@ -77,4 +77,7 @@ int main(){
                 (v.empty()) ? cout << "empty" << "\n" : cout << v.back() << "\n";
             break;
         }
+        count++;
+    }while (count <= n);
+    
 }   
