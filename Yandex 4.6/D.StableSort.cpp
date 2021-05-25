@@ -29,9 +29,8 @@ void sort_vector(vector <vector <int> > &vec){
     //vector< vector<int> >::iterator row;
     //vector<int>::iterator col;
     for (itr = mp.begin(); itr != mp.end(); ++itr)
-        for(int i = itr->second; i < vec.size(); i++)
-            for (int j = 0; j < vec.size(); j++)
-                cout << vec[i][j]<<", ";
+        for (int j = 0; j < vec.size(); j++)
+            cout << vec[itr->second][j]<<" ";
 }
 
 void printingMatrix(vector <vector <int> > &vec)
@@ -78,7 +77,7 @@ int main(){
     }
     sort_vector(matrix);
 
-    printingMatrix(matrix);
+    //printingMatrix(matrix);
     
     MyReadFile.close();
 }   
