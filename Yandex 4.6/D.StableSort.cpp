@@ -20,11 +20,13 @@ void printingMatrix(vector <vector <int> > &vec)
 // with standart head
 void sort_vector(vector <vector <int> > &vec){
         
-        int i = 0, max = 0;    
-    
-        for (int j = 0, w = j + 1; w < vec.size()-1; j++, w++){
-            int sumRowBe = 0, sumRowAf = 0;
-            std::vector<int> vB, vA;
+    int i = 0, max = 0;    
+
+    for (int j = 0; i < vec.size(); j++){
+        int sumRowBe = 0, sumRowAf = 0;
+        std::vector<int> vB, vA;
+        for (int w = j + 1; w < vec.size()-1; w++){
+            
             for (int i = 0; i < vec.size(); i++){
                 if(vec[j][i] > 0){ 
                     sumRowBe += vec[j][i];
@@ -35,10 +37,12 @@ void sort_vector(vector <vector <int> > &vec){
                 }
             }
             if(sumRowBe >= sumRowAf){
-                vec.erase(vec.begin()+j);
+                //vec.erase(vec.begin()+j);
                 vec.push_back(vB);
-            }
+            }            
         }
+        
+    }
 }
 
 // with MultiMap
