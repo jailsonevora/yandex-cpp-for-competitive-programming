@@ -11,9 +11,9 @@ void sort_vector(vector <vector <int> > &vec){
     stable_sort(vec.begin(), vec.begin() + vec.size());
 }
 
-void sort_vector(vector <vector <int> > &vec){
+// void sort_vector(vector <vector <int> > &vec){
     
-}
+// }
 
 int main(){
     ios::sync_with_stdio(false);
@@ -41,9 +41,9 @@ int main(){
                     for (int i = 0; !ss.eof(); i++){
                         ss >> num;
                         v.push_back(num);
-                    }
-                    matrix.push_back(v);
+                    }                    
                 }
+                matrix.push_back(v);
         }
     }
 
