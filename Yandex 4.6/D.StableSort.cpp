@@ -44,8 +44,6 @@ int main(){
             matrix.push_back(v);
         }
     }
-
-
     sort_vector(matrix);
     
     MyReadFile.close();
