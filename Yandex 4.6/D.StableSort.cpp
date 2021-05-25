@@ -30,7 +30,6 @@ void sort_vector(vector <vector <int> > &vec){
             for (int i = 0; i < vec.size(); i++){
                 if(vec[j][i] > 0){ 
                     sumRowBe += vec[j][i];
-                    vB.push_back(vec[j][i]);
                 }
                 if(vec[w][i] > 0){
                     sumRowAf += vec[w][i];
