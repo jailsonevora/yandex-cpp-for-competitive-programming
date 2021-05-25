@@ -76,7 +76,7 @@ int main(){
     }
     sort_vector(matrix);
 
-    //printingMatrix(matrix);
+    printingMatrix(matrix);
     
     MyReadFile.close();
 }   
