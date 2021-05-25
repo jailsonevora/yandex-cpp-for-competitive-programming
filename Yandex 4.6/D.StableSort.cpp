@@ -30,12 +30,13 @@ void sort_vector(vector <vector <int> > &vec){
 
     vector <vector <int> > temp;
     multimap <int, int> :: iterator itr;
-    std::vector<int> v;
 
-    for (itr = mp.begin(); itr != mp.end(); itr++)
+    for (itr = mp.begin(); itr != mp.end(); itr++){
+        std::vector<int> v;
         for (int j = 0; j < vec.size() && vec[itr->second][j] > 0; j++)
             v.push_back(vec[itr->second][j]);
-    temp.push_back(v);
+        temp.push_back(v);
+    }
 
     printingMatrix(temp);
 }
@@ -60,16 +61,16 @@ int main(){
         }
         else{
             std::vector<int> v;  
-                stringstream ss(line);
-                for (int i = 0; !ss.eof(); i++){
-                    if(i==0){
-                        ss >> num;
-                    }
-                    else{
-                        ss >> num;
-                        v.push_back(num);
-                    }
-                } 
+            stringstream ss(line);
+            for (int i = 0; !ss.eof(); i++){
+                if(i==0){
+                    ss >> num;
+                }
+                else{
+                    ss >> num;
+                    v.push_back(num);
+                }
+            } 
             matrix.push_back(v);
         }
     }
