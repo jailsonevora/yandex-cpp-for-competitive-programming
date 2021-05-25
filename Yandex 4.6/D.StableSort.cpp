@@ -26,7 +26,6 @@ int main(){
 
     ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.6/inputD.txt");
 
-    // construct a vector of ints with the given default value
     while(getline(MyReadFile, line)){
 
         if(count == 0){
