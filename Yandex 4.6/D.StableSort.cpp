@@ -15,6 +15,15 @@ void sort_vector(vector <vector <int> > &vec){
     
 // }
 
+void printingMatrix(vector <vector <int> > &vec)
+{
+    for (std::vector<int> row: vec){
+        for (int val: row)
+            cout << val << " ";
+        cout<<endl;
+    }
+}
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -44,6 +53,8 @@ int main(){
         }
     }
     sort_vector(matrix);
+
+    printingMatrix(matrix);
     
     MyReadFile.close();
 }   
