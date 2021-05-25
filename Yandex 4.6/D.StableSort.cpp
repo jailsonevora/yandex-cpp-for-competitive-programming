@@ -7,13 +7,13 @@
 
 using namespace std;
 
-void sort_vector(vector <vector <int> > &vec){
-    stable_sort(vec.begin(), vec.begin() + vec.size());
-}
-
 // void sort_vector(vector <vector <int> > &vec){
-    
+//     stable_sort(vec.begin(), vec.begin() + vec.size());
 // }
+
+void sort_vector(vector <vector <int> > &vec){
+    
+}
 
 void printingMatrix(vector <vector <int> > &vec)
 {
@@ -46,8 +46,13 @@ int main(){
             std::vector<int> v;  
                 stringstream ss(line);
                 for (int i = 0; !ss.eof(); i++){
-                    ss >> num;
-                    v.push_back(num);
+                    if(i==0){
+                        ss >> num;
+                    }
+                    else{
+                        ss >> num;
+                        v.push_back(num);
+                    }
                 } 
             matrix.push_back(v);
         }
