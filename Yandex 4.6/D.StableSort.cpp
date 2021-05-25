@@ -51,17 +51,8 @@ int main(){
                     }
             }
         }
-    }
 
-    sort_vector(matrix); 
-
-    // for (std::vector<int> row: matrix)
-    // {
-    //     for (int val: row) {
-    //         std::cout << val << " ";
-    //     }
-    //     std::cout << std::endl;
-    // }
+    sort_vector(matrix);
     
     MyReadFile.close();
 }   
