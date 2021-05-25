@@ -23,7 +23,15 @@ void sort_vector(vector <vector <int> > &vec){
         mp.insert(pair<int, int>(sum,i)); 
         ++i;
     }
-    cout << "";
+
+    vector <vector <int> > temp;
+    multimap <int, int> :: iterator itr;
+    //vector< vector<int> >::iterator row;
+    //vector<int>::iterator col;
+    for (itr = mp.begin(); itr != mp.end(); ++itr)
+        for(int i = itr->second; i < vec.size(); i++)
+            for (int j = 0; j < vec.size(); j++)
+                cout << vec[i][j]<<", ";
 }
 
 void printingMatrix(vector <vector <int> > &vec)
