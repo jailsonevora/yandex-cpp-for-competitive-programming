@@ -4,6 +4,7 @@
 #include <sstream>
 #include <fstream>
 #include <bits/stdc++.h>
+#include <map>
 
 using namespace std;
 
@@ -12,7 +13,17 @@ using namespace std;
 // }
 
 void sort_vector(vector <vector <int> > &vec){
-    
+    int i = 0, sum = 0;
+    map<int, int> mp;
+    for (std::vector<int> row: vec){
+        for (int val: row){
+            sum += val;
+        }
+        mp.insert(i,sum); 
+        ++i;
+    }
+
+
 }
 
 void printingMatrix(vector <vector <int> > &vec)
