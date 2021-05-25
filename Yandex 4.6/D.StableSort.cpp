@@ -17,29 +17,54 @@ void printingMatrix(vector <vector <int> > &vec)
     }
 }
 
+// with standart head
 void sort_vector(vector <vector <int> > &vec){
-    int i = 0;
-    multimap<int, int> mp;
-    for (std::vector<int> row: vec){
-        int sum = 0;
-        for (int val: row)
-            sum += val;
-        mp.insert(pair<int, int>(sum,i)); 
-        ++i;
-    }
-
-    vector <vector <int> > temp;
-    multimap <int, int> :: iterator itr;
-
-    for (itr = mp.begin(); itr != mp.end(); itr++){
-        std::vector<int> v;
-        for (int j = 0; j < vec.size() && vec[itr->second][j] > 0; j++)
-            v.push_back(vec[itr->second][j]);
-        temp.push_back(v);
-    }
-    vec.clear();
-    std::copy(temp.begin(), temp.end(), back_inserter(vec));
+        
+        int i = 0, max = 0;    
+    
+        for (int j = 0, w = j + 1; w < vec.size()-1; j++, w++){
+            int sumRowBe = 0, sumRowAf = 0;
+            std::vector<int> vB, vA;
+            for (int i = 0; i < vec.size(); i++){
+                if(vec[j][i] > 0){ 
+                    sumRowBe += vec[j][i];
+                    vB.push_back(vec[j][i]);
+                }
+                if(vec[w][i] > 0){
+                    sumRowAf += vec[w][i];
+                }
+            }
+            if(sumRowBe >= sumRowAf){
+                vec.erase(vec.begin()+j);
+                vec.push_back(vB);
+            }
+        }
 }
+
+// with MultiMap
+// void sort_vector(vector <vector <int> > &vec){
+//     int i = 0;
+//     multimap<int, int> mp;
+//     for (std::vector<int> row: vec){
+//         int sum = 0;
+//         for (int val: row)
+//             sum += val;
+//         mp.insert(pair<int, int>(sum,i)); 
+//         ++i;
+//     }
+
+//     vector <vector <int> > temp;
+//     multimap <int, int> :: iterator itr;
+
+//     for (itr = mp.begin(); itr != mp.end(); itr++){
+//         std::vector<int> v;
+//         for (int j = 0; j < vec.size() && vec[itr->second][j] > 0; j++)
+//             v.push_back(vec[itr->second][j]);
+//         temp.push_back(v);
+//     }
+//     vec.clear();
+//     std::copy(temp.begin(), temp.end(), back_inserter(vec));
+// }
 
 int main(){
     ios::sync_with_stdio(false);
