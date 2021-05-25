@@ -37,8 +37,8 @@ void sort_vector(vector <vector <int> > &vec){
             v.push_back(vec[itr->second][j]);
         temp.push_back(v);
     }
-
-    printingMatrix(temp);
+    vec.clear();
+    std::copy(temp.begin(), temp.end(), back_inserter(vec));
 }
 
 int main(){
