@@ -8,31 +8,6 @@
 
 using namespace std;
 
-// void sort_vector(vector <vector <int> > &vec){
-//     stable_sort(vec.begin(), vec.begin() + vec.size());
-// }
-
-void sort_vector(vector <vector <int> > &vec){
-    int i = 0;
-    multimap<int, int> mp;
-    for (std::vector<int> row: vec){
-        int sum = 0;
-        for (int val: row){
-            sum += val;
-        }
-        mp.insert(pair<int, int>(sum,i)); 
-        ++i;
-    }
-
-    vector <vector <int> > temp;
-    multimap <int, int> :: iterator itr;
-    //vector< vector<int> >::iterator row;
-    //vector<int>::iterator col;
-    for (itr = mp.begin(); itr != mp.end(); ++itr)
-        for (int j = 0; j < vec.size(); j++)
-            cout << vec[itr->second][j]<<" ";
-}
-
 void printingMatrix(vector <vector <int> > &vec)
 {
     for (std::vector<int> row: vec){
@@ -40,6 +15,29 @@ void printingMatrix(vector <vector <int> > &vec)
             cout << val << " ";
         cout<<endl;
     }
+}
+
+void sort_vector(vector <vector <int> > &vec){
+    int i = 0;
+    multimap<int, int> mp;
+    for (std::vector<int> row: vec){
+        int sum = 0;
+        for (int val: row)
+            sum += val;
+        mp.insert(pair<int, int>(sum,i)); 
+        ++i;
+    }
+
+    vector <vector <int> > temp;
+    multimap <int, int> :: iterator itr;
+    std::vector<int> v;
+
+    for (itr = mp.begin(); itr != mp.end(); itr++)
+        for (int j = 0; j < vec.size() && vec[itr->second][j] > 0; j++)
+            v.push_back(vec[itr->second][j]);
+    temp.push_back(v);
+
+    printingMatrix(temp);
 }
 
 int main(){
