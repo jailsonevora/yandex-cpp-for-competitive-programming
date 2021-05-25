@@ -13,17 +13,17 @@ using namespace std;
 // }
 
 void sort_vector(vector <vector <int> > &vec){
-    int i = 0, sum = 0;
-    map<int, int> mp;
+    int i = 0;
+    multimap<int, int> mp;
     for (std::vector<int> row: vec){
+        int sum = 0;
         for (int val: row){
             sum += val;
         }
-        mp.insert(i,sum); 
+        mp.insert(pair<int, int>(sum,i)); 
         ++i;
     }
-
-
+    cout << "";
 }
 
 void printingMatrix(vector <vector <int> > &vec)
