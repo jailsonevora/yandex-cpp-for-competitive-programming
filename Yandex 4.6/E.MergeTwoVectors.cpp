@@ -11,31 +11,35 @@ using namespace std;
 
 vector <int> mergeHalves(vector <int> &vec1, vector <int> &vec2){
 
-    vector <int> temp;
-    while (vec1.begin() != vec1.end() && vec2.begin() != vec2.end())
+    std::vector <int> temp;
+    std::vector<int>::iterator it1 = vec1.begin();
+    std::vector<int>::iterator it2 = vec2.begin();
+    std::vector<int>::iterator itTemp = temp.begin();
+
+    while (it1 != vec1.end() && it2 != vec2.end())
     {
-        if(vec1.begin() <= vec2.begin()){
-            temp.begin() = vec1.begin();
-            vec1.begin()++;
+        if(it1 <= it2){
+            temp.push_back(*it1);
+            it1++;
         }
         else{
-            temp.begin() = vec2.begin();
-            vec2.begin()++;
+            temp.push_back(*it2);
+            it2++;
         }
-        temp.begin()++;
+        itTemp++;
     }
     // Copy the remaining elements of, if there are any
-    while (vec1.begin() != vec1.end()) {
-        temp.begin() = vec1.begin();
-        vec1.begin()++;
-        temp.begin()++;
+    while (it1 != vec1.end()) {
+        temp.push_back(*it1);
+        it1++;
+        itTemp++;
     }
  
     // Copy the remaining elements of, if there are any
-    while (vec2.begin() != vec2.end()) {
-        temp.begin() = vec2.begin();
-        vec2.begin()++;
-        temp.begin()++;
+    while (it2 != vec2.end()) {
+        temp.push_back(*it2);
+        it2++;
+        itTemp++
     }
     return temp;
 }
