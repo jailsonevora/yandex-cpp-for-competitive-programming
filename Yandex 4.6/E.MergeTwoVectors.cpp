@@ -17,8 +17,7 @@ void printingMatrix(vector <vector <int> > &vec)
     }
 }
 
-// with MultiMap
-void merge(vector <vector <int> > &vec){
+void merge(vector <int> &vec1, vector <int> &vec2){
     
 }
 
@@ -31,33 +30,6 @@ int main(){
     int arrParam[3];
     std::string line; int num;
 
-    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.6/inputD.txt");
-
-    while(getline(MyReadFile, line)){
-
-        if(count == 0){
-            stringstream ss(line);
-                ss >> n;
-            count++;
-        }
-        else{
-            std::vector<int> v;  
-            stringstream ss(line);
-            for (int i = 0; !ss.eof(); i++){
-                if(i==0){
-                    ss >> num;
-                }
-                else{
-                    ss >> num;
-                    v.push_back(num);
-                }
-            } 
-            matrix.push_back(v);
-        }
-    }
-    merge(matrix);
-
+    //merge(v1,v2);
     printingMatrix(matrix);
-    
-    MyReadFile.close();
 }   
