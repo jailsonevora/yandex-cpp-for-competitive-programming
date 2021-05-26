@@ -35,9 +35,10 @@ void sort_vector(vector <vector <int> > &vec){
                     sumRowAf += vec[w][i];
                 }
             }
-            if(sumRowBe >= sumRowAf){
-                //vec.erase(vec.begin()+j);
-                vec.push_back(vB);
+            if(sumRowBe > sumRowAf){
+                for (int i = 0; i < vec.size(); i++){
+                    std::swap(vec[j][i],vec[w][i]);
+                }                
             }            
         }
         
