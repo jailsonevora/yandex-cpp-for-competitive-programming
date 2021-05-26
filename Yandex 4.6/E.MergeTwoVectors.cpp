@@ -8,18 +8,44 @@
 
 using namespace std;
 
-void printingMatrix(vector <vector <int> > &vec)
-{
-    for (std::vector<int> row: vec){
-        for (int val: row)
-            cout << val << " ";
-        cout<<endl;
+
+vector <int> merge(vector <int> &vec1, vector <int> &vec2){
+    if(vec1 == vec2)
+        return;
+    return mergeHalves(vec1, vec2);
+}
+vector <int> mergeHalves(vector <int> &vec1, vector <int> &vec2){
+
+    vector <int> temp;
+    while (vec1.begin() != vec1.end() && vec2.begin() != vec2.end())
+    {
+        if(vec1.begin() <= vec2.begin()){
+            temp.begin() = vec1.begin();
+            vec1.begin()++;
+        }
+        else{
+            temp.begin() = vec2.begin();
+            vec2.begin()++;
+        }
+        temp.begin()++;
+    }
+    // Copy the remaining elements of
+    // *ptrBgA, if there are any
+    while (vec1.begin() != vec1.end()) {
+        temp.begin() = vec1.begin();
+        vec1.begin()++;
+        temp.begin()++;
+    }
+ 
+    // Copy the remaining elements of
+    // *ptrBgB, if there are any
+    while (vec2.begin() != vec2.end()) {
+        temp.begin() = vec2.begin();
+        vec2.begin()++;
+        temp.begin()++;
     }
 }
 
-void merge(vector <int> &vec1, vector <int> &vec2){
-    
-}
 
 int main(){
     ios::sync_with_stdio(false);
@@ -30,6 +56,7 @@ int main(){
     int arrParam[3];
     std::string line; int num;
 
-    //merge(v1,v2);
-    printingMatrix(matrix);
+    vector<int> v1 = {1,3,5,7,10}, v2{2,4,8,11};
+
+    merge(v1,v2);
 }   
