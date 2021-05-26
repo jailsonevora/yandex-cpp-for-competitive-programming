@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 vector <int> mergeHalves(vector <int> &vec1, vector <int> &vec2){
 
     std::vector <int> temp;
@@ -18,7 +17,7 @@ vector <int> mergeHalves(vector <int> &vec1, vector <int> &vec2){
 
     while (it1 != vec1.end() && it2 != vec2.end())
     {
-        if(it1 <= it2){
+        if(*it1 <= *it2){
             temp.push_back(*it1);
             it1++;
         }
@@ -39,7 +38,7 @@ vector <int> mergeHalves(vector <int> &vec1, vector <int> &vec2){
     while (it2 != vec2.end()) {
         temp.push_back(*it2);
         it2++;
-        itTemp++
+        itTemp++;
     }
     return temp;
 }
