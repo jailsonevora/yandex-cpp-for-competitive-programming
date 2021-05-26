@@ -9,11 +9,6 @@
 using namespace std;
 
 
-vector <int> merge(vector <int> &vec1, vector <int> &vec2){
-    if(vec1 == vec2)
-        return;
-    return mergeHalves(vec1, vec2);
-}
 vector <int> mergeHalves(vector <int> &vec1, vector <int> &vec2){
 
     vector <int> temp;
@@ -29,21 +24,26 @@ vector <int> mergeHalves(vector <int> &vec1, vector <int> &vec2){
         }
         temp.begin()++;
     }
-    // Copy the remaining elements of
-    // *ptrBgA, if there are any
+    // Copy the remaining elements of, if there are any
     while (vec1.begin() != vec1.end()) {
         temp.begin() = vec1.begin();
         vec1.begin()++;
         temp.begin()++;
     }
  
-    // Copy the remaining elements of
-    // *ptrBgB, if there are any
+    // Copy the remaining elements of, if there are any
     while (vec2.begin() != vec2.end()) {
         temp.begin() = vec2.begin();
         vec2.begin()++;
         temp.begin()++;
     }
+    return temp;
+}
+
+vector <int> merge(vector <int> &vec1, vector <int> &vec2){
+    if(vec1.begin() == vec2.begin())
+        return vec1;
+    return mergeHalves(vec1, vec2);
 }
 
 
