@@ -39,6 +39,6 @@ int main(){
     }
     MyReadFile.close();
 
-    cout << conCatenate(arr[0], arr[1], arr[2]) << " ";
+    cout << conCatenate(arr[0], arr[1], arr[2]) << "\n";
     
 }
