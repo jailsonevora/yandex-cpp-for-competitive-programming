@@ -8,12 +8,18 @@ using namespace std;
 
 string conCatenate(const string s1, const string s2, const string s3){
 
-    if(s1 < s2 && s2 < s3)
+    if(s1 <= s2 && s2 <= s3)
         return s1+s2+s3;
-    else if(s2 < s3 && s3 < s1)
+    else if(s1 <= s3 && s3 <= s2)
+        return s1+s3+s2;
+    else if(s2 <= s1 && s1 <= s3)
+        return s2+s1+s3;
+    else if(s2 <= s3 && s3 <= s1)
         return s2+s3+s1;
-    else if(s3 < s1 && s1 < s2)
+    else if(s3 <= s1 && s1 <= s2)
         return s3+s1+s2;
+    else if(s3 <= s2 && s2 <= s1)
+        return s3+s2+s1;
 }
 
 
