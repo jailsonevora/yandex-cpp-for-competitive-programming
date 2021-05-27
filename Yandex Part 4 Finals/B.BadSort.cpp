@@ -31,7 +31,7 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vector<int> a {10,7,9,6,3,1,2,8,5,4};
+    vector<int> a {10,9,8,7,6,5,4,3,2,1};
 
     BadSort(a);
 
