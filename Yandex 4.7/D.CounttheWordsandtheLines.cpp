@@ -22,7 +22,7 @@ int main(){
         stringstream ss(line);
         auto sp = std::count(line.begin(), line.end(), ' ');
 
-        if(!line.empty())
+        if(!sp <)
             countNumLine++;
 
 
