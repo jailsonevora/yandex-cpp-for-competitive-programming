@@ -3,7 +3,6 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
-#include <ctype.h>
 
 using namespace std;
 
@@ -22,7 +21,7 @@ int main(){
     while(getline(MyReadFile, line)){
         stringstream ss(line); 
 
-        if(!line.empty() || )
+        if(!line.empty())
             countNoEmptyLine++;
         
         while (!ss.eof()){
