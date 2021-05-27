@@ -15,7 +15,7 @@ bool iequals(const string& a, const string& b)
                       });
 }
 
-void e_rase(string &e){
+void translator(string &e){
 
     if(iequals(e,"cat"))
         cout << "meow" << "\n";
@@ -38,10 +38,10 @@ int main(){
 
     string line;
 
-    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.7/inputC1.txt");
+    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.7/inputC2.txt");
 
     while(getline(MyReadFile, line)){
-        e_rase(line);
+        translator(line);
     }
 
     MyReadFile.close();
