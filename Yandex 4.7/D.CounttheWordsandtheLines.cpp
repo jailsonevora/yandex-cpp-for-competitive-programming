@@ -14,27 +14,22 @@ int main(){
 
     string line;
     string words;
+    int countWords=0;
     int countNoEmptyLine = 0, countNumLine;
 
     ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.7/inputD.txt");
 
     while(getline(MyReadFile, line)){
         stringstream ss(line);
-        auto sp = std::count(line.begin(), line.end(), ' ');
-
-        if(!sp <)
-            countNumLine++;
-
-
-        // while (!ss.eof()){
-        //     ss >> words;
-        //     if(!words.empty()) 
-        //         countNoEmptyLine++;
-        // }
-            
+        while (!ss.eof()){
+            ss >> words;
+            //int space = std::count(words.begin(), words.end(), '  ');
+            if(!words.empty()) 
+                countWords++;            
+        }            
     }
 
-    cout << countNumLine;
+    cout << countWords;
 
     MyReadFile.close();
 }
