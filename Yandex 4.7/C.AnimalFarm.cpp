@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// with <algorithm> header
 bool iequals(const string& a, const string& b)
 {
     return std::equal(a.begin(), a.end(),
