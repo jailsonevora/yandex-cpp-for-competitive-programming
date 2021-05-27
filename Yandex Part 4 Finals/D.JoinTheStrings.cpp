@@ -6,16 +6,18 @@
 
 using namespace std;
 
-string conCatenate(const string s1, const string s2, const string s3){
+string conCatenate(string s1, string s2, string s3){
 
     if(s1 <= s2 && s2 <= s3)
         return s1+s2+s3;
     else if(s1 <= s3 && s3 <= s2)
         return s1+s3+s2;
+
     else if(s2 <= s1 && s1 <= s3)
         return s2+s1+s3;
     else if(s2 <= s3 && s3 <= s1)
         return s2+s3+s1;
+
     else if(s3 <= s1 && s1 <= s2)
         return s3+s1+s2;
     else if(s3 <= s2 && s2 <= s1)
@@ -32,7 +34,7 @@ int main(){
     int i=0;
     string arr[3];
 
-    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex Part 4 Finals/inputD.txt");
+    ifstream MyReadFile("C:/Competitive Programming/Yandex C++ for Competitive Programming/yandex-cpp-for-competitive-programming/Yandex Part 4 Finals/inputD.txt");
 
     while(getline(MyReadFile, line)){
         stringstream ss(line); 
