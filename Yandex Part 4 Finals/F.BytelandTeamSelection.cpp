@@ -17,7 +17,7 @@ class contestant
     contestant(string cstName, long long sc1, long long sc2, long long sc3, long long sc4, long long sc5){
         contestantName = cstName;
         score1 = sc1;
-        score2 =  sc2;
+        score2 = sc2;
         score3 = sc3;
         score4 = sc4;
         score5 = sc5;
@@ -29,7 +29,8 @@ bool compare(contestant a, contestant b){
     auto sca = a.score1 + a.score2 + a.score3 + a.score4 + a.score5;
     auto scb = b.score1 + b.score2 + b.score3 + b.score4 + b.score5;
     
-	return a.contestantName < b.contestantName && ( a.score1 >= 0 && a.score2 >= 0);
+	return a.contestantName < b.contestantName && 
+    (a.score1 >= 0 && a.score2 >= 0 && a.score3 >= 0 && a.score4 >= 0 && a.score5 >= 0);
 }
 
 void to_final(std::vector<contestant>& v, int k){
@@ -42,7 +43,6 @@ void to_final(std::vector<contestant>& v, int k){
         i++;
     }
 }
-
 
 int main(){
 
