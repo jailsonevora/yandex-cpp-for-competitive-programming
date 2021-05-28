@@ -1,3 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    long long line;
+    long long sum = 0; int i = 0;
+
+    while(scanf("%lld", &line)==1){
+            if(i > 0)
+                sum+=line;
+            else;
+            i++;
+    }    
+    printf("%lld",sum);
+    
+}
+
+// OR
 // #include <iostream>
 // #include <string>
 // #include <sstream>
@@ -32,24 +52,3 @@
 
 //     MyReadFile.close();    
 // }
-
-// OR
-
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-    long long line;
-    long long sum = 0; int i = 0;
-
-    while(scanf("%lld", &line)==1){
-            if(i > 0)
-                sum+=line;
-            else;
-            i++;
-    }    
-    printf("%lld",sum);
-    
-}
