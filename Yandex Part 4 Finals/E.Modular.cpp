@@ -18,14 +18,17 @@ class Int
     }   
 
     long long operator + (Int& other) {
-        return mod + other.val;
+        if (val + other.val < (mod-1) && val + other.val > 0)
+    		return val + other.val;
     }
 
     Int operator * (Int& other) {
-        return mod * other.val;
+        if (val * other.val < (mod-1) && val * other.val > 0)
+        	return val * other.val;
     }
 
     long long operator - (Int& other){
-        return mod - other.val;
+    	if (val - other.val < (mod-1) && val - other.val > 0)
+        	return val - other.val;
     }
 };   
