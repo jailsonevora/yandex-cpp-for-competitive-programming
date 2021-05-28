@@ -2,12 +2,8 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include <algorithm>
-#include <vector>
-#include <numeric>
 
 using namespace std;
-
 
 int main(){
 
@@ -17,25 +13,22 @@ int main(){
 
     string line;
 
-    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex Part 4 Finals/inputF.txt");
+    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 5.1/inputA.txt");
+    int sum = 0, i = 0;
 
     while(getline(MyReadFile, line)){
         stringstream ss(line);
-        int i = 0, sum = 0; 
-        int n;
 
         while (!ss.eof()){
-            if(i > 0){
-                int temp;
-                ss >> temp;
+            int temp;
+            ss >> temp;
+            if(i > 0)
                 sum+=temp;
-            }
-            else
-                ss >> n;
-            ++i;         
+            else;
+            i++;                     
         }
-        cout << sum;
-    }
+    }    
+    cout << sum;
 
     MyReadFile.close();
     
