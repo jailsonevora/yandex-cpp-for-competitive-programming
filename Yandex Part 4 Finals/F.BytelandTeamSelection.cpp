@@ -23,28 +23,13 @@ class contestant
     }   
 };
 
-bool compare(string a, string b, long long sca, long long scb){
-	 return (a + b) < (b + a) && (sca > 0 && scb > 0 && sca > scb);
-}
-
-string lowestString(string s1, string s2) {
-    
-    vector<string> strs {s1,s2};
-	string res = "";
-
-	if (strs.empty()) return  "";
-
-	sort(strs.begin(),strs.end(),compare);
-
-	for (string str: strs)
-		res += str;
-	return res;
+bool compare(contestant a, contestant b){
+	 return (a.contestantName + b.contestantName) < (b.contestantName + a.contestantName); 
+     //&& (sca > 0 && scb > 0 && sca > scb);
 }
 
 void to_final(std::vector<contestant>& v, int k){
-
-    string res = "";
-
+    
 	sort(v.begin(),v.end(),compare);
 
 	for (contestant vs: v)
