@@ -29,16 +29,18 @@ bool compare(contestant a, contestant b){
     auto sca = a.score1 + a.score2 + a.score3 + a.score4 + a.score5;
     auto scb = b.score1 + b.score2 + b.score3 + b.score4 + b.score5;
     
-	return a.contestantName < b.contestantName && ( sca >= 0 && scb >= 0 && sca >= scb);
+	return a.contestantName < b.contestantName && ( a.score1 >= 0 && a.score2 >= 0);
 }
 
 void to_final(std::vector<contestant>& v, int k){
     
 	sort(v.begin(),v.end(),compare);
-
-	for (contestant vs: v)
-		cout << vs.contestantName << " " << vs.score1 << " " << vs.score2 << " " 
-        << vs.score3 << " " << vs.score4 << " " << vs.score5 << "\n";
+    int i = 0;
+	while (i < k){
+		cout << v[i].contestantName << " " << v[i].score1 << " " << v[i].score2 << " " 
+        << v[i].score3 << " " << v[i].score4 << " " << v[i].score5 << "\n";
+        i++;
+    }
 }
 
 
@@ -48,7 +50,7 @@ int main(){
     cin.tie(0);
 
     string line;
-    int k = 6;
+    int k = 4;
     std::vector<contestant> v;
 
     ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex Part 4 Finals/inputF.txt");
