@@ -28,14 +28,16 @@ bool compare(string a, string b){
 }
 
 string lowestString(string s1, string s2, string s3) {
+    
     vector<string> strs {s1,s2,s3};
-	if (strs.empty())
-		return  "";
-	sort(strs.begin(),strs.end(),compare);
 	string res = "";
-	for (int i = 0; i < strs.size(); ++i) {
-		res += strs[i];
-	}
+
+	if (strs.empty()) return  "";
+
+	sort(strs.begin(),strs.end(),compare);
+
+	for (string str: strs)
+		res += str;
 	return res;
 }
 
