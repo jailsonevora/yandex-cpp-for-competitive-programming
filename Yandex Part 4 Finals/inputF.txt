@@ -1,4 +1,3 @@
-6 4
 VeniVidiVici 1 2 3 4 5
 AbraKadabra 5 4 3 2 1
 Winner 300 300 300 300 300
