@@ -3,6 +3,7 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -20,7 +21,23 @@ class contestant
         score4 = sc4;
         score5 = sc5;
     }   
-};  
+};
+
+bool compare(string a, string b){
+	 return (a + b) < (b + a);
+}
+
+string lowestString(string s1, string s2, string s3) {
+    vector<string> strs {s1,s2,s3};
+	if (strs.empty())
+		return  "";
+	sort(strs.begin(),strs.end(),compare);
+	string res = "";
+	for (int i = 0; i < strs.size(); ++i) {
+		res += strs[i];
+	}
+	return res;
+}
 
 void to_final(std::vector<contestant>& v, int k){
 
