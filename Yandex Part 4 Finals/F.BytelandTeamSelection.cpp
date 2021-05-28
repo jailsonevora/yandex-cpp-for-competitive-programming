@@ -7,10 +7,10 @@
 
 using namespace std;
 
-class contestant
+struct contestant
 {  
-    public : string contestantName;
-    public : long long score1, score2, score3, score4, score5;
+    string contestantName;
+    long long score1, score2, score3, score4, score5;
 
     public :
     contestant(string cstName, long long sc1, long long sc2, long long sc3, long long sc4, long long sc5){
