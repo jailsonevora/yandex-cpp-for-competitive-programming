@@ -1,0 +1,7 @@
+6 4
+VeniVidiVici 1 2 3 4 5
+AbraKadabra 5 4 3 2 1
+Winner 300 300 300 300 300
+LoSeAll -100 -100 -100 -100 1
+unlucky 0 0 0 0 0
+AdrakAbadra 0 0 0 0 0

@@ -45,34 +45,43 @@ void to_final(std::vector<contestant>& v, int k){
 
 }
 
-int countWords(){
-
-    string line;
-    int countWords=0;
-
-    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.7/inputD.txt");
-
-    while(getline(MyReadFile, line)){
-        stringstream ss(line); 
-
-        while (!ss.eof()){
-            string words;
-            ss >> words;
-            if(!words.empty()) 
-                countWords++;            
-        }                    
-    }
-    MyReadFile.close();
-
-    return countWords;
-}
-
 
 int main(){
 
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    cout << countLines() << " " << countWords();
+    string line;
+    int k;
+    std::vector<contestant> v;
+
+    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.7/inputD.txt");
+
+    while(getline(MyReadFile, line)){
+        stringstream ss(line);
+        int i = 0; 
+        string words;
+        long long arr[5];
+        int sum = 0;
+
+        while (!ss.eof()){
+            
+            if(i > 0){
+                long long temp;
+                ss >> temp;
+                arr[i] = temp;
+                sum += temp; 
+            }
+            else
+                ss >> words;
+            ++i;         
+        } 
+        v.push_back(contestant(words, arr[0], arr[1], arr[2], arr[3], arr[4])); 
+    }
+    
+
+    to_final(v, k);
+
+    MyReadFile.close();
     
 }
