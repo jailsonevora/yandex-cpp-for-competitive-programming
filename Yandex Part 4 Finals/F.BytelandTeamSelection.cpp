@@ -51,17 +51,16 @@ int main(){
 
     while(getline(MyReadFile, line)){
         stringstream ss(line);
-        int i = 0; 
+        int i = 0, j = 0; 
         string words;
         long long arr[5];
-        int sum = 0;
 
         while (!ss.eof()){
             if(i > 0){
                 long long temp;
                 ss >> temp;
-                arr[i] = temp;
-                sum += temp; 
+                arr[j] = temp;
+                ++j;
             }
             else
                 ss >> words;
