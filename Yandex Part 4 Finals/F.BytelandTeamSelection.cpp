@@ -23,13 +23,13 @@ class contestant
     }   
 };
 
-bool compare(string a, string b){
-	 return (a + b) < (b + a);
+bool compare(string a, string b, long long sca, long long scb){
+	 return (a + b) < (b + a) && (sca > 0 && scb > 0 && sca > scb);
 }
 
-string lowestString(string s1, string s2, string s3) {
+string lowestString(string s1, string s2) {
     
-    vector<string> strs {s1,s2,s3};
+    vector<string> strs {s1,s2};
 	string res = "";
 
 	if (strs.empty()) return  "";
@@ -43,6 +43,13 @@ string lowestString(string s1, string s2, string s3) {
 
 void to_final(std::vector<contestant>& v, int k){
 
+    string res = "";
+
+	sort(v.begin(),v.end(),compare);
+
+	for (contestant vs: v)
+		cout << vs.contestantName << " " << vs.score1 << " " << vs.score2 << " " 
+        << vs.score3 << " " << vs.score4 << " " << vs.score5 << "\n";
 }
 
 
@@ -52,7 +59,7 @@ int main(){
     cin.tie(0);
 
     string line;
-    int k;
+    int k = 6;
     std::vector<contestant> v;
 
     ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.7/inputD.txt");
@@ -65,7 +72,6 @@ int main(){
         int sum = 0;
 
         while (!ss.eof()){
-            
             if(i > 0){
                 long long temp;
                 ss >> temp;
@@ -77,8 +83,7 @@ int main(){
             ++i;         
         } 
         v.push_back(contestant(words, arr[0], arr[1], arr[2], arr[3], arr[4])); 
-    }
-    
+    }    
 
     to_final(v, k);
 
