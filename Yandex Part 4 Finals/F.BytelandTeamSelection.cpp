@@ -4,13 +4,14 @@
 #include <fstream>
 #include <algorithm>
 #include <vector>
+#include <numeric>
 
 using namespace std;
 
-struct contestant
+class contestant
 {  
-    string contestantName;
-    long long score1, score2, score3, score4, score5;
+    public : string contestantName;
+    public : long long score1, score2, score3, score4, score5;
 
     public :
     contestant(string cstName, long long sc1, long long sc2, long long sc3, long long sc4, long long sc5){
@@ -24,8 +25,11 @@ struct contestant
 };
 
 bool compare(contestant a, contestant b){
-	 return (a.contestantName + b.contestantName) < (b.contestantName + a.contestantName); 
-     //&& (sca > 0 && scb > 0 && sca > scb);
+
+    auto sca = a.score1 + a.score2 + a.score3 + a.score4 + a.score5;
+    auto scb = b.score1 + b.score2 + b.score3 + b.score4 + b.score5;
+    
+	return a.contestantName < b.contestantName && ( sca >= 0 && scb >= 0);
 }
 
 void to_final(std::vector<contestant>& v, int k){
