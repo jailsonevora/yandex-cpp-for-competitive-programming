@@ -47,7 +47,7 @@ int main(){
     int k = 6;
     std::vector<contestant> v;
 
-    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.7/inputD.txt");
+    ifstream MyReadFile("C:/Competitive Programming/yandex-cpp-for-competitive-programming/Yandex 4.7/inputF.txt");
 
     while(getline(MyReadFile, line)){
         stringstream ss(line);
