@@ -29,7 +29,7 @@ bool compare(contestant a, contestant b){
     auto sca = a.score1 + a.score2 + a.score3 + a.score4 + a.score5;
     auto scb = b.score1 + b.score2 + b.score3 + b.score4 + b.score5;
     
-	return a.contestantName < b.contestantName && ( sca >= 0 && scb >= 0);
+	return a.contestantName < b.contestantName && ( sca >= 0 && scb >= 0 && sca >= scb);
 }
 
 void to_final(std::vector<contestant>& v, int k){
