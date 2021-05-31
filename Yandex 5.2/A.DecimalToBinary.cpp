@@ -38,11 +38,11 @@ long long decimalToBinary(long long n)
     return B_Number;
 }
 
-int decToBinary(long long n)
+long long decToBinary(long long n)
 {
-    // Size of an integer is assumed to be 32 bits
-    for (int i = 31; i >= 0; i--) {
-        int k = n >> i;
+    // Size of an integer is assumed to be 64 bits
+    for (int i = 63; i >= 0; i--) {
+        long long k = n >> i;
         if (k & 1)
             cout << "1";
         else
