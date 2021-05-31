@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void decToBinary(long long n)
+void decToBinaryV(long long n)
 {
     long long binaryNum[32];
     for (int j = 0; j < 32; j++)
