@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -33,26 +34,30 @@ long long decimalToBinary(long long n)
         B_Number += rem * c;
         n /= 2;
         cnt++;
-    }
- 
+    } 
     return B_Number;
 }
 
-long long decToBinary(long long n)
+string decimalToBinaryS(long long n)
 {
-    // Size of an integer is assumed to be 64 bits
-    for (int i = 63; i >= 0; i--) {
-        long long k = n >> i;
-        if (k & 1)
-            cout << "1";
-        else
-            cout << "0";
-    }
+    //finding the binary form of the number and
+    //coneverting it to string.
+    string s = bitset<64> (n).to_string();
+     
+    //Finding the first occurance of "1"
+    //to strip off the leading zeroes.
+    const auto loc1 = s.find('1');
+     
+    if(loc1 != string::npos)
+        return s.substr(loc1);
+     
+    return "0";
 }
 
 int main(){
 
     long long n;
     cin >> n;
-    cout << decToBinary(n);
+    //cout << decToBinaryv(n);
+    cout << decimalToBinaryS(n);
 }
