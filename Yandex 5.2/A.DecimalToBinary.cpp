@@ -21,7 +21,7 @@ void decToBinary(long long n)
         cout << binaryNum[j];
 }
 
-int decimalToBinary(long long n)
+long long decimalToBinary(long long n)
 {
  
     // To store the binary number
