@@ -5,13 +5,13 @@ using namespace std;
 int main(){
 
     long long qN, q;
-    long long n, i = 0; 
+    long long n;
     scanf("%lld", &n);    
     scanf("%lld", &qN);
     bool flag = false;
 
     while(scanf("%lld", &q)==1){
-        
+        long long i = 1;
         while(i<=n){               
             if(i == q){ 
                 flag = true;
