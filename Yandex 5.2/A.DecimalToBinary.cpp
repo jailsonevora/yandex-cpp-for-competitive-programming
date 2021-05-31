@@ -6,8 +6,8 @@ using namespace std;
 
 void decToBinaryV(long long n)
 {
-    long long binaryNum[32];
-    for (int j = 0; j < 32; j++)
+    long long binaryNum[256];
+    for (int j = 0; j < 256; j++)
         binaryNum[j] = -1;
  
     int i = 0;
