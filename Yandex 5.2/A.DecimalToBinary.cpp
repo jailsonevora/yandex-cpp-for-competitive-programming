@@ -21,13 +21,13 @@ void decToBinary(long long n)
         cout << binaryNum[j];
 }
 
-int decimalToBinary(long long N)
+int decimalToBinary(long long n)
 {
  
     // To store the binary number
     unsigned long long B_Number = 0;
-    int cnt = 0;
-    while (N != 0) {
+    long long cnt = 0;
+    while (n != 0) {
         int rem = N % 2;
         unsigned long long c = pow(10, cnt);
         B_Number += rem * c;
@@ -38,9 +38,21 @@ int decimalToBinary(long long N)
     return B_Number;
 }
 
+int decToBinary(long long n)
+{
+    // Size of an integer is assumed to be 32 bits
+    for (int i = 31; i >= 0; i--) {
+        int k = n >> i;
+        if (k & 1)
+            cout << "1";
+        else
+            cout << "0";
+    }
+}
+
 int main(){
 
     long long n;
     cin >> n;
-    cout << decimalToBinary(n);
+    cout << decToBinary(n);
 }
