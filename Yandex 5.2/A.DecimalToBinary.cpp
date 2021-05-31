@@ -28,10 +28,10 @@ long long decimalToBinary(long long n)
     unsigned long long B_Number = 0;
     long long cnt = 0;
     while (n != 0) {
-        int rem = N % 2;
+        int rem = n % 2;
         unsigned long long c = pow(10, cnt);
         B_Number += rem * c;
-        N /= 2;
+        n /= 2;
         cnt++;
     }
  
