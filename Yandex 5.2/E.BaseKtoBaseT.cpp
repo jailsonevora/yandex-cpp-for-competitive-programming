@@ -4,41 +4,31 @@
 
 using namespace std;
 
-// To return value of a char. For example, 2 is
-// returned for '2'.  10 is returned for 'A', 11
-// for 'B'
-long long val(char c)
+// To return char for a value. For example '2'
+// is returned for 2. 'A' is returned for 10. 'B'
+// for 11
+char reVal(long long num)
 {
-    if (c >= '0' && c <= '9')
-        return (long long)c - '0';
+    if (num >= 0 && num <= 9)
+        return (char)(num + '0');
     else
-        return (long long)c - 'A' + 10;
+        return (char)(num - 10 + 'A');
 }
  
-// Function to convert a number from given base 'b'
-// to decimal
-void baseKtoBaseT(string str, long long baseK, long long baseT)
+// Function to convert a given decimal number
+// to a base 'base' and
+void deciToBase(long long n, long long base)
 {
-    
-    long long len = str.size();
-    long long power = 1; // Initialize power of base
-    long long num = 0;  // Initialize result
-    long long i;
-
-    for (i = len - 1; i >= 0; i--)
+    string res;
+ 
+    // Convert input number is given base by repeatedly
+    // dividing it by base and taking remainder
+    while (n > 0)
     {
-        // A digit in input number must be
-        // less than number's base
-        if (val(str[i]) >= baseK){
-            printf("Invalid Number\n");
-            break;
-        }
- 
-        num += val(str[i]) * power;
-        power = power * baseT;
+        res.insert(0,1,reVal(n % base));
+        n /= base;
     }
- 
-    cout << num;
+    cout << res;
 }
 
 int main(){
