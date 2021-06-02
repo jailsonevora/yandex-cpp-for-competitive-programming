@@ -4,9 +4,9 @@
 
 using namespace std;
 
-int hexDecToOct(string hexDecNum)
+long long hexDecToOct(string hexDecNum)
 {
-    int i, len=0, decNum=0, octNum=0;
+    long long i, len=0, decNum=0, octNum=0;
     len = hexDecNum.size();
     len--;
     for(i=0; hexDecNum[i]!='\0'; i++, len--)
