@@ -19,9 +19,9 @@ long long binaryToDecimal(long long n)
     
     return decimal;
 }
-long long binaryToDecimal(long long n)
+long long binaryToDecimalString(long long n)
 {   
-    string num = bitset<64> (n).to_string();
+    string num = std::to_string(n);
     long long dec_value = 0;
  
     // Initializing base value to 1, i.e 2^0
@@ -32,15 +32,13 @@ long long binaryToDecimal(long long n)
         if (num[i] == '1')
             dec_value += base;
         base = base * 2;
-    }
- 
+    } 
     return dec_value;
-}
- 
+} 
 
 int main(){
 
     long long n;
     cin >> n;
-    cout << binaryToDecimal(n);
+    cout << binaryToDecimalString(n);
 }
