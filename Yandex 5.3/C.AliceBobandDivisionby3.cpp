@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <vector>
 
 using namespace std;
 
@@ -11,7 +10,9 @@ int main(){
     cout.tie(0);
 
     unsigned long long n;
-    cin >> n;    
+    cin >> n; 
+
+    double long x =  ( n / 3.0);   
     
-    cout << n * (unsigned long long) 3;
+    cout << x;
 }

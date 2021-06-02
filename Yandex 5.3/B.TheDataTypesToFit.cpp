@@ -10,38 +10,29 @@ int main(){
     ios::sync_with_stdio();
     cin.tie(0);
     cout.tie(0);
+    
+    long long line;
+    cin >> line;
+    
+    int total_digts = (int)log10(abs(line));
+    total_digts++;
 
-    string line;
+    auto a = sizeof(short int);
 
-    long long lL;
-    char c;
-    unsigned char uC;
-    short int sI;
-    unsigned short int usI;
-    int i;
-    unsigned int uI;
-    unsigned long long ulL;
-
-
-    getline(cin, line);
-    stringstream ss(line);
-    ss >> lL;
-    if(lL<0)
-        cout << "long long" << "\n";
-    ss >> c;
-    if(c<0)
+    if(total_digts <= sizeof(char)*8)
         cout << "char" << "\n";
-    if(ss >> uC)
+    if(total_digts <= sizeof(unsigned char)*8)
         cout << "unsigned char" << "\n";
-    if(ss >> sI)
+    if(total_digts <= sizeof(short int)*8)
         cout << "short int" << "\n";
-    if(ss >> usI)
+    if(total_digts <= sizeof(unsigned short int)*8)
         cout << "unsigned short int" << "\n";
-    ss >> i;
-    if(i<0)
+    if(total_digts <= sizeof(int)*8)
         cout << "int" << "\n";
-    if(ss >> uI)
+    if(total_digts <= sizeof(unsigned int)*8)
         cout << "unsigned int" << "\n";
-    if(ss >> ulL)
+    if(total_digts <= sizeof(long long)*8)
+        cout << "long long" << "\n";
+    if(total_digts <= sizeof(unsigned long long)*8)
         cout << "unsigned long long" << "\n";
 }
