@@ -32,10 +32,7 @@ void baseToDeci(string str, int base)
         // A digit in input number must be
         // less than number's base
         if (val(str[i]) >= base)
-        {
-           printf("Invalid Number");
-           return -1;
-        }
+            printf("Invalid Number");
  
         num += val(str[i]) * power;
         power = power * base;
