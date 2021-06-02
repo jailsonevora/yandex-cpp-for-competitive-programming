@@ -7,7 +7,7 @@ using namespace std;
 // To return char for a value. For example '2'
 // is returned for 2. 'A' is returned for 10. 'B'
 // for 11
-char reVal(int num)
+char reVal(long long num)
 {
     if (num >= 0 && num <= 9)
         return (char)(num + '0');
@@ -18,8 +18,8 @@ char reVal(int num)
 // Utility function to reverse a string
 void strev(char *str)
 {
-    int len = strlen(str);
-    int i;
+    long long len = strlen(str);
+    long long i;
     for (i = 0; i < len/2; i++)
     {
         char temp = str[i];
@@ -30,9 +30,9 @@ void strev(char *str)
  
 // Function to convert a given decimal number
 // to a base 'base' and
-void deciToBase(int inputNum, int base)
+void deciToBase(long long inputNum, int base)
 {
-    int index = 0;  // Initialize index of result
+    long long index = 0;  // Initialize index of result
     char res[100];
  
     // Convert input number is given base by repeatedly
