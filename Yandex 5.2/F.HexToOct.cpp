@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <bits/stdc++.h>
+#include <cmath>
 
 using namespace std;
 
@@ -35,9 +35,5 @@ int main(){
     string n;
     cin >> n;
 
-    if(hexDecToOct(n)==0)
-        cout<<"\nInvalid Hex Digit!";
-    else
-        cout<<"\nEquivalent Octal Value: "<<hexDecToOct(n);
-    cout<<endl;
+    cout<<hexDecToOct(n);
 }
