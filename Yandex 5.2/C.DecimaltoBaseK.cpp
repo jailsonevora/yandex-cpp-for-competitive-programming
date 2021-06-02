@@ -30,9 +30,10 @@ void strev(char *str)
  
 // Function to convert a given decimal number
 // to a base 'base' and
-char* fromDeci(char res[], int inputNum, int base)
+void deciToBase(int inputNum, int base)
 {
     int index = 0;  // Initialize index of result
+    char res[100];
  
     // Convert input number is given base by repeatedly
     // dividing it by base and taking remainder
@@ -45,14 +46,18 @@ char* fromDeci(char res[], int inputNum, int base)
  
     // Reverse the result
     strev(res);
- 
-    return res;
+    
+    cout << res;
 }
 
 int main(){
 
     long long n;
     cin >> n;
-    //cout << decToBinaryv(n);
-    cout << decimalToBinaryS(n);
+    cin.clear();
+
+    int k;
+    cin >> k;
+
+    deciToBase(n, k);
 }
