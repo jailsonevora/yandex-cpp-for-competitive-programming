@@ -7,7 +7,7 @@ using namespace std;
 // To return value of a char. For example, 2 is
 // returned for '2'.  10 is returned for 'A', 11
 // for 'B'
-int val(char c)
+long long val(char c)
 {
     if (c >= '0' && c <= '9')
         return (long long)c - '0';
