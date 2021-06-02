@@ -15,38 +15,19 @@ char reVal(long long num)
         return (char)(num - 10 + 'A');
 }
  
-// Utility function to reverse a string
-void strev(char *str)
-{
-    long long len = strlen(str);
-    long long i;
-    for (i = 0; i < len/2; i++)
-    {
-        char temp = str[i];
-        str[i] = str[len-i-1];
-        str[len-i-1] = temp;
-    }
-}
- 
 // Function to convert a given decimal number
 // to a base 'base' and
-void deciToBase(long long inputNum, int base)
+void deciToBase(long long n, long long base)
 {
-    long long index = 0;  // Initialize index of result
-    char res[100];
+    string res;
  
     // Convert input number is given base by repeatedly
     // dividing it by base and taking remainder
-    while (inputNum > 0)
+    while (n > 0)
     {
-        res[index++] = reVal(inputNum % base);
-        inputNum /= base;
+        res.insert(0,1,reVal(n % base));
+        n /= base;
     }
-    res[index] = '\0';
- 
-    // Reverse the result
-    strev(res);
-    
     cout << res;
 }
 
@@ -56,7 +37,7 @@ int main(){
     cin >> n;
     cin.clear();
 
-    int k;
+    long long k;
     cin >> k;
 
     deciToBase(n, k);
