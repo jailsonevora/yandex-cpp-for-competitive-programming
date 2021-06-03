@@ -10,10 +10,13 @@ int main(){
     cout.tie(0);
 
     int n;
-    long long a;
+    long long a, r;
+
     cin >> a;
     cin >> n;
     
-    if(n & (n+1))
-        cout << (a >> n);
+    if((n+1) & 0)
+        r = a << n;
+    cout << r;
+    
 }
