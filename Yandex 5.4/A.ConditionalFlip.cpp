@@ -9,9 +9,10 @@ int main(){
     cin.tie(0);
     cout.tie(0);
 
-    int a, n;
+    int n;
+    long long a;
     cin >> a;
     cin >> n;
-
-    cout << (a >> n);
+        
+    cout << (a>>= n);
 }
