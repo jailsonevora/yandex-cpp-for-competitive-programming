@@ -21,18 +21,18 @@ int main(){
 
     if(total_digts <= sizeof(char)*8)
         cout << "char" << "\n";
-    if(total_digts <= sizeof(unsigned char)*8)
+    if(total_digts <= sizeof(unsigned char)*8 && line > 0)
         cout << "unsigned char" << "\n";
     if(total_digts <= sizeof(short int)*8)
         cout << "short int" << "\n";
-    if(total_digts <= sizeof(unsigned short int)*8)
+    if(total_digts <= sizeof(unsigned short int)*8 && line > 0)
         cout << "unsigned short int" << "\n";
     if(total_digts <= sizeof(int)*8)
         cout << "int" << "\n";
-    if(total_digts <= sizeof(unsigned int)*8)
+    if(total_digts <= sizeof(unsigned int)*8 && line > 0)
         cout << "unsigned int" << "\n";
     if(total_digts <= sizeof(long long)*8)
         cout << "long long" << "\n";
-    if(total_digts <= sizeof(unsigned long long)*8)
+    if(total_digts <= sizeof(unsigned long long)*8 && line > 0)
         cout << "unsigned long long" << "\n";
 }
