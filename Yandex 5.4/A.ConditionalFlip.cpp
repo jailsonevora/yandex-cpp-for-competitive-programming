@@ -13,6 +13,7 @@ int main(){
     long long a;
     cin >> a;
     cin >> n;
-        
-    cout << (a>>= n);
+    
+    if(n & (n+1))
+        cout << (a >> n);
 }
