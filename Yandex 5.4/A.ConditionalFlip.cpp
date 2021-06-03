@@ -9,10 +9,9 @@ int main(){
     cin.tie(0);
     cout.tie(0);
 
-    unsigned long long n;
-    cin >> n; 
+    int a, n;
+    cin >> a;
+    cin >> n;
 
-    double long x =  ( n / 3.0);   
-    
-    cout << x;
+    cout << (a >> n);
 }
