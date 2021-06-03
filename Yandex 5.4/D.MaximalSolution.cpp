@@ -14,8 +14,9 @@ int main(){
     
     unsigned int max = 0;
     while (n) {
-        count += n & 1;
+        if( (n+max) == (n^max) )
+            max = n; 
         n >>= 1;
     }
-    cout << count;
+    cout << max;
 }
