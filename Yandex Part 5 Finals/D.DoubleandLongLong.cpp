@@ -9,6 +9,14 @@ void f(double d){
         ( ( (long long) d) & i) ? printf("1") : printf("0");
 }
 
+void fs(double d){
+    long long dL = (long long) d;
+    if (dL > 1)
+        fs(dL >> 1);
+ 
+    printf("%d", dL & 1);
+}
+
 int main(){
     
     ios::sync_with_stdio();
