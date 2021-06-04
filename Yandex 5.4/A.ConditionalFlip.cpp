@@ -15,8 +15,7 @@ int main(){
     cin >> a;
     cin >> n;
     
-    if((n+1) & 0)
-        r = a << n;
-    cout << r;
+    if( (n) & (1 << a) == 0)
+        cout << (a << n);
     
 }
