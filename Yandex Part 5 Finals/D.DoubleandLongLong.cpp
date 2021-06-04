@@ -22,7 +22,7 @@ int main(){
 }
 
 void f(double d){
-	unsigned i;
+	unsigned long long i;
     for (i = 1 << 32; i > 0; i = i / 2)
-        (d & i) ? printf("1") : printf("0");
+        ((long long) d & i) ? printf("1") : printf("0");
 }
