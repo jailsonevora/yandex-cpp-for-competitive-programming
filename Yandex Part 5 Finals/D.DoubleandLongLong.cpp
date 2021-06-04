@@ -14,7 +14,7 @@ void fs(double d){
     if (dL > 1)
         fs(dL >> 1);
  
-    printf("%d", dL & 1);
+    printf("%lld", dL & 1);
 }
 
 int main(){
